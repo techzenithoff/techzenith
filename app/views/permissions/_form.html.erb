@@ -1,0 +1,34 @@
+<%= form_with(model: permission, local: false) do |form| %>
+  <div class="modal-body">
+		 	<ul class="errors">
+    		</ul>
+
+  <div class="form-group">
+    <%= form.label :role_id, "Rôle", class: "required" %>
+    <%= form.collection_select(:role_id, @roles,  :id, :name , {prompt: "Sélectionner un profil"}, class: "form-control", style: "width: 100%;", required: true) %>
+
+  </div>
+
+  <div class="form-group">
+    <%= form.label :feature_id, "Fonctionalité", class: "required" %>
+    <%= form.collection_select(:feature_id, @features,  :id, :name , {prompt: "Sélectionner un profil"}, class: "form-control", style: "width: 100%;", required: true) %>
+
+  </div>
+
+  <div class="form-group">
+
+  <%= fields_for(:permission_items) do |permission_action_form| %>
+          <%= permission_action_form.label :permission_actions, "Permissions", class: "required" %>
+          <%= permission_action_form.select(:permission_actions, PERMISSION_ACTIONS, {selected: (@selected_permissions.map(&:permission_id) unless @selected_permissions.nil?)}, {class: "form-control", style: "width: 100%;",  multiple: true,required: true}) %>
+        <% end %>
+
+  </div>
+
+  
+
+ </div><!-- modal body -->
+	<div class="modal-footer">
+		<%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+		<%= form.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+	</div>
+<% end %>

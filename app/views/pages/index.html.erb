@@ -1,0 +1,39 @@
+<div class="container">
+<div class="br-pageheader">
+      <nav class="breadcrumb pd-0 mg-0 tx-12">
+        
+        <span class="breadcrumb-item active"><h3>Pages</h3></span>
+      </nav>
+    </div><!-- br-pageheader -->
+<div class="br-pagebody">
+  <div class="br-section-wrapper">
+    <div class="headers mg-b-20">
+        <div class="left-content">
+        </div>
+
+        <div class="text-right">
+            <%= link_to raw('<i class="fa fa-plus" aria-hidden="true"></i> Ajouter'), new_page_path, class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", remote: false %>
+
+        </div>
+
+    </div>
+
+
+<table id="datatable-default" class="table display responsive nowrap">
+  <thead>
+    <tr>
+      <th>Permalien</th>
+      <th>Titre</th>
+      <th>Statut</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render "index"%>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="page-modal" class="c-modal modal fade" data-backdrop="static"></div>

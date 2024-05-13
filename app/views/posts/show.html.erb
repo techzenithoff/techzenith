@@ -1,0 +1,200 @@
+<% title @post.title %>
+<% description @description  %>
+<% content_for :meta_title, @post.title %>
+<% content_for :meta_description, @post.content.to_plain_text.truncate_words(80, omission: ' ...')  %>
+<% content_for :meta_published_time, @post.created_at %>
+<% content_for :meta_modified_time, @post.updated_at %>
+<% content_for :meta_type, "article" %>
+
+<% content_for :meta_image, rails_blob_url(@post.thumbnail) %>
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <%= render "layouts/partials/front/breadcrumbs"%>
+
+      
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry entry-single">
+
+              <div class="entry-img">
+                <%= post_thumbnail(@post, "", "img-fluid")%>
+
+              </div>
+
+              <h1 class="entry-title">
+                <%= @post.title %>
+              </h1>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center">
+                    <i class="fas fa-user"></i>
+                    <a href="#"><%= @post.account.login %></a>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="far fa-clock"></i> 
+                    <a href="#">
+                    <time><%= @post.created_at.strftime("%d/%m/%Y") %></time>
+                    </a>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="fas fa-rss-square"></i>
+                    <a href="#"><%= @post.post_category.name %></a>
+                  </li>
+                  <!--<li class="d-flex align-items-center">
+                    <i class="bi bi-chat-dots"></i> 
+                    <a href="blog-single.html">12 Comments</a>
+                  </li> -->
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <%= @post.content %>
+
+              </div>
+              
+              <div class="entry-footer mt-5">
+                <div class="social-share  mg-t-30 text-center">
+        
+                <%= social_share_button_tag(@post.title, url: post_url(@post), :image => rails_blob_url(@post.thumbnail)   ,  desc: @post.content.to_plain_text.truncate_words(80, omission: ' ...')) %>
+              </div>
+              <!--
+                <i class="bi bi-folder"></i>
+                <ul class="cats">
+                  <li><a href="#">Business</a></li>
+                </ul>
+
+                <i class="bi bi-tags"></i>
+                <ul class="tags">
+                  <li><a href="#">Creative</a></li>
+                  <li><a href="#">Tips</a></li>
+                  <li><a href="#">Marketing</a></li>
+                </ul>
+              -->
+              </div> 
+
+            </article><!-- End blog entry -->
+            
+            <div class="blog-author d-flex align-items-center">
+              
+              <%= user_avatar(@post.account, "rounded-circle float-left", "") %>
+              <div>
+                <h4><%= @post.account.login %></h4>
+                <div class="social-links ">
+                  <a href="https://twitters.com/#"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
+                </div>
+                <p>
+                  
+                </p>
+              </div>
+            </div> <!-- End blog author bio -->
+
+            <div class="blog-related-posts align-items-center">
+              
+              <div class="block_header " >
+                <h2 class="block_title">Articles similaires</h2>
+           
+              </div>
+              <div class="row mt-4">
+
+                  <% @related_posts.each do |related_post| %>
+                  <div class="col-md-4 mb-4">
+                    <div class="">
+                      <%= post_thumbnail(related_post, "", "img-fluid")%>
+                      <h4>
+                        
+                        <%= link_to related_post.title.truncate(80, omission: ' ...'), post_path(related_post) %>
+                      </h4>
+                      <time><!-- related_post.created_at.strftime("%d/%m/%Y") --></time>
+                    </div>
+                  </div>
+
+                  <% end %>
+
+              </div>
+              
+            </div> <!-- End blog author bio -->
+            
+            <div class="blog-comments">
+              <!--
+              <h4 class="comments-count">8 Comments</h4>
+
+              <div id="comment-1" class="comment">
+                <div class="d-flex">
+                  <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
+                  <div>
+                    <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <time datetime="2020-01-01">01 Jan, 2020</time>
+                    <p>
+                      Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis molestiae est qui cum soluta.
+                      Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
+                    </p>
+                  </div>
+                </div>
+              </div> --><!-- End comment #1 -->
+              <!--
+              <div id="comment-2" class="comment">
+                <div class="d-flex">
+                  <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
+                  <div>
+                    <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <time datetime="2020-01-01">01 Jan, 2020</time>
+                    <p>
+                      Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut beatae.
+                    </p>
+                  </div>
+                </div>
+              </div> --><!-- End comment #2-->
+             
+              <div class="reply-form">
+                <h4>Laisser un commentaire</h4>
+                <p>Votre adresse email ne sera pas publiée. Les champs requis sont indiqués * </p>
+                <form action="">
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input name="name" type="text" class="form-control" placeholder="Votre nom*">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input name="email" type="text" class="form-control" placeholder="Votre email*">
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col form-group">
+                      <textarea name="comment" class="form-control" placeholder="Votre commentaire*"></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-danger">Publier</button>
+
+                </form>
+
+              </div>
+
+            </div> <!-- End blog comments -->
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+            <%= render "shareds/sidebar/sidebar" %>  
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Single Section -->
+
+  </main><!-- End #main -->

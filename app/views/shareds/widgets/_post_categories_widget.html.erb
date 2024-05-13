@@ -1,0 +1,11 @@
+<div class="sidebar-item categories">
+  <ul>
+    <% all_post_categories.each do |post_category| %>
+      <li>
+        <%= link_to "#{post_category.name} (#{post_category.posts.count})", "" %>
+      </li>
+
+    <% end %>
+    
+  </ul>
+</div><!-- End sidebar categories-->

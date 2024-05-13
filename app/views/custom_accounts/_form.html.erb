@@ -1,0 +1,90 @@
+<%= form_with(model: user, url: create_user_path, local: false) do |f| %>
+		<div class="modal-body">
+		 	<ul class="errors">
+    		</ul>
+			<%= f.fields_for :profile do |p| %>
+				<!-- Fieldset informations -->
+				<fieldset>
+					<legend>Informations </legend>
+					<div class="row">
+
+                        <div class="form-group col-md-4">
+                            <%= p.label "Prénom", class: "required" %>
+                            <%= p.text_field :first_name, class: "form-control", placeholder: "Prénom", required: true %>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <%= p.label "Nom", class: "required" %>
+                            <%= p.text_field :last_name , class: "form-control", placeholder: "Nom" , required: true%>
+                        </div>
+						
+
+					
+                        <div class="form-group col-md-4 customSelect">
+							<%= p.label :civility, "Genre", class: "required" %> 
+							<%= p.select :civility , GENDERS, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%" , required: true %>
+						
+						</div>
+					</div>
+
+                    <div class="row">
+                        
+
+                        <div class="form-group col-md-6 customSelect">
+							<%= p.label :entity_id, "Entité", class: "required" %> 
+							<%= p.collection_select :entity_id , @entities, :id, :name, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%"  %>
+							
+						</div>
+
+                       
+
+						<div class="form-group col-md-6">
+							<%= p.label :position, "Fonction", class: "required" %> 
+							<%= p.text_field :position , class: "form-control", placeholder: "Fonction"  %>
+							
+						</div>
+                    </div>
+				</fieldset>
+			<% end %>
+			<!-- Fieldset informations -->
+				<fieldset>
+					<legend>Compte d'utilisateur </legend>
+					<div class="row">
+						
+						
+                        <div class="form-group col-md-6">
+                            <%= f.label "Profil" %>
+                            <%= f.collection_select(:role_id, @roles,  :id, :name , {prompt: "Sélectionner un profil"}, class: "form-control", required: true) %>
+                                                    
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <%= f.label :email %><br />
+                            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "E-mail", required: true %>
+                        </div>
+
+						
+                    </div>
+                    <div class="row">
+
+						<div class="form-group col-md-6">
+                            <%= f.label :password %>
+                            <% if @minimum_password_length %>
+                            <em>(<%= @minimum_password_length %> characters minimum)</em>
+                            <% end %><br />
+                            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Mot de passe", required: true %>
+                        </div>
+						
+                        <div class="form-group col-md-6">
+                            <%= f.label :password_confirmation %><br />
+                            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirmation du mot de passe", required: true %>
+                        </div>
+					
+					</div>
+				</fieldset>
+		</div><!-- modal body -->
+	<div class="modal-footer">
+		<%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+		<%= f.submit  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+	</div>
+<% end %>

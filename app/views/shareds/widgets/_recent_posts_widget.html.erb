@@ -1,0 +1,13 @@
+<div class="sidebar-item recent-posts">
+    <% @recent_posts.each do |recent_post| %>
+    <div class="post-item clearfix">
+      
+      <%= post_thumbnail(recent_post, "", "img-fluid")%>
+      <h4>
+        <%= link_to recent_post.title.truncate_words(10, omission: ' ...'), post_path(recent_post) %>
+      </h4>
+      <time><%= recent_post.created_at.strftime("%d/%m/%Y") %></time>
+
+    </div>
+    <% end %>
+  </div> <!-- End sidebar recent posts-->

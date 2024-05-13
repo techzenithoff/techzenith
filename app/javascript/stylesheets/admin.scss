@@ -1,0 +1,28 @@
+@import "application";
+
+
+// DATATABLES
+//@import "../vendor/bracket/lib/datatables.net-dt/css/jquery.dataTables.min";
+//@import "../vendor/bracket/lib/datatables.net-responsive-dt/css/responsive.dataTables.min";
+
+
+//@import "lib/DataTables/DataTables-1.10.22/css/dataTables.bootstrap4.min";
+@import "../vendor/backend/bracket/lib/DataTables/Responsive-2.5.0/css/responsive.bootstrap4.min";
+//@import "../vendor/bracket/lib/DataTables/Buttons-2.4.2/css/buttons.bootstrap4.min";
+
+
+@import "../vendor/backend/bracket/scss/bracket";
+@import "../vendor/backend/bracket/lib/perfect-scrollbar/scs/perfect-scrollbar.min";
+@import "../vendor/backend/bracket/lib/select2/css/select2.min";
+@import "../vendor/backend/bracket/lib/select2/css/select2-bootstrap.min";
+@import "actiontext";
+@import "./actiontext.scss";
+
+
+@import "style";
+//@import "scss/perfect-scrollbar.min";
+//@import "lib/datatables.net-dt/css/jquery.dataTables.min";
+//@import "lib/datatables.net-responsive-dt/css/responsive.dataTables.min";
+@import "error";
+@import "toastr";
+//@import "invoice";

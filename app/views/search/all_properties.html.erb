@@ -1,0 +1,29 @@
+<% title "Toutes les propriétés" %>
+
+
+<div class="container main-container">
+    
+
+    
+    <div class="row">
+
+        <div class="col-md-12 mt-30">
+            <%= render "searches/partials/search_bar" %>
+
+        </div>
+        <div class="google-ads col-md-12 mg-t-20 mg-b-20">
+            <%= render "shared/ads/search_properties_top_ads" %>
+        </div>
+        
+        <div class="col-md-12 mt-30">
+            <div class="search-result mt-30 mb-30">
+                <%= render("searches/partials/properties_result") %>
+            </div>
+        </div>
+    </div>
+   
+   <div class="google-ads">
+        <%= render "shared/ads/search_properties_bottom_ads" %>
+    </div>
+
+</div>

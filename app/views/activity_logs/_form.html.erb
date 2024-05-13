@@ -1,0 +1,57 @@
+<%= form_with(model: activity_log, local: true) do |form| %>
+  <% if activity_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activity_log.errors.count, "error") %> prohibited this activity_log from being saved:</h2>
+
+      <ul>
+      <% activity_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :uid %>
+    <%= form.text_field :uid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :browser %>
+    <%= form.text_field :browser %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ip_address %>
+    <%= form.text_field :ip_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :controller %>
+    <%= form.text_field :controller %>
+  </div>
+
+  <div class="field">
+    <%= form.label :action %>
+    <%= form.text_field :action %>
+  </div>
+
+  <div class="field">
+    <%= form.label :params %>
+    <%= form.text_field :params %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_field :note %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

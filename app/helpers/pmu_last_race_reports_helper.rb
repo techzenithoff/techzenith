@@ -1,0 +1,2 @@
+module PmuLastRaceReportsHelper
+end

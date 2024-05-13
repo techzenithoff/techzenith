@@ -1,0 +1,28 @@
+<div class="sidebar-item recent-posts">
+<div class="row video_wrapper">
+					<% @last_videos.each do |video| %>
+						<div class="col-md-12 mb-4">
+							<div class="content_item">
+								<div class="video-head">
+									<%= link_to video_path(video), class: "" do %>
+										<span class="video-cover">
+											<%= image_pack_tag "cover/cover-bikodo.jpeg" %>
+										</span>
+									<% end %>
+									<%= link_to video_path(video), class: "" do %>
+									<span class="video-duration">
+										<i class="bi bi-play-fill"></i>
+									</span>
+									<% end %>
+								</div>
+								<div class="video_content_title">
+									<h3><%= link_to video.title, video_path(video) %></h3>
+								</div>
+							</div>
+						
+						</div>
+					<% end %>
+					
+						
+					
+				</div></div>

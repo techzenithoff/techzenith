@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @ability.role %>
+</p>
+
+<p>
+  <strong>Permission:</strong>
+  <%= @ability.permission %>
+</p>
+
+<p>
+  <strong>Feature:</strong>
+  <%= @ability.feature %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @ability.status %>
+</p>
+
+<%= link_to 'Edit', edit_ability_path(@ability) %> |
+<%= link_to 'Back', abilities_path %>

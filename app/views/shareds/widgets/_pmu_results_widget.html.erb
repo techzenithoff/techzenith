@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <div class="results-content">
+    <% if @last_pmu_result.present? %>
+      <div class="row mt-3">
+      	<div class="col-md-12 text-center">
+      		<span class="race-date"><i class="fas fa-calendar-alt"></i><%= @last_pmu_result.race_date.strftime("%d/%m/%Y")  %></span>
+
+      	</div>
+      	<div class="col-md-12 text-center">
+      		<div class="results">
+  	    		<%= @last_pmu_result.result  %>
+  	    	</div>
+      	</div>
+      </div>
+    <% end %>
+    <div class="row mt-2">
+    	<div class="col-md-12 text-center">
+    		<!-- link_to "En savoir plus", pmu_mali_path,  class: "btn btn-danger" -->
+        <%= link_to "En savoir plus...", pmu_mali_path %>
+    	</div>
+    </div>
+   </div>
+</div>

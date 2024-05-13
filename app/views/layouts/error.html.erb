@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <% if controller_name == "front" && action_name == "home" %>
+      <%= display_meta_tags site: "#{APPLICATION_NAME} | #{APPLICATION_SLOGAN}", charset: "utf-8" %>
+      <% else %>
+         <%= display_meta_tags site: APPLICATION_NAME, charset: "utf-8", og: { site_name: "#{APPLICATION_NAME}", type: 'website' } %>
+    <% end %>
+
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
+    
+    <%= render 'layouts/partials/google_analytics' %>
+
+
+
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <%= render("layouts/partials/front/header") %>
+      <div class="page-wrapper">
+        <%= yield %>
+      </div>
+
+  </body>
+</html>

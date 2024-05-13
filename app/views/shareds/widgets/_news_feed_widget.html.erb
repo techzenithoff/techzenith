@@ -1,0 +1,36 @@
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 sidebar-page-container">
+    <div class="sidebar">
+        <div class="sidebar-widget sidebar-post">
+            <div class="widget-title">
+                <h3>L'Info en continu</h3>
+            </div>
+            <div class="post-inner">
+                <div class="carousel-inner-data">
+                    <ul>
+                      <% @recent_posts.each do |recent_post| %>
+                        <li>
+                            <div class="post">
+                                <div class="post-date">
+                                    <p><%= recent_post.created_at.strftime("%d") %></p><span><%= recent_post.created_at.strftime("%b") %></span>
+
+                                </div>
+                                <!--
+                                <div class="file-box"><i class="far fa-folder-open"></i>
+                                    <p>Subject</p>
+                                </div>-->
+                                <h5><%= link_to recent_post.title.truncate(100, omission: ' ...'), post_path(recent_post) %></h5>
+                            </div>
+                        </li>
+                        
+                        
+                        <% end %>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+   

@@ -1,0 +1,11 @@
+$("ul.errors").html("");
+<% if @smtp_server_setting.errors.any? %>
+  <% @smtp_server_setting.errors.full_messages.each do |message| %>
+ 
+    $("ul.errors").append($('<div class="c-alert c-alert--danger" > ').html("<%= message.html_safe %> "));
+  <% end %>
+<% else %>
+  $(".smtp-server-settings").html("<%= escape_javascript(render 'smtp_settings') %>");
+  $("#smtp-server-setting-modal").modal("hide");
+ 
+<% end %>

@@ -1,0 +1,151 @@
+<%= form_with(model: event) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-9">
+
+    <div class="form-group">
+      <%= form.label :title, "Titre", class: "required" %>
+      <%= form.text_field :title, class: "form-control", placeholder: "Titre", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :event_category_id, "Catégorie", class: "required" %>
+      <%= form.collection_select(:event_category_id, @event_categories, :id, :title, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %> 
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= form.label :start_date, "Date début", class: "required" %>
+          <%= form.date_field :start_date, class: "form-control", required: true %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= form.label :end_date, "Date fin", class: "required" %>
+          <%= form.date_field :end_date, class: "form-control", required: true %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= form.label :start_time, "Heure début" %>
+          <%= form.time_field :start_time, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= form.label :end_time, "Heure fin" %>
+          <%= form.time_field :end_time, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="form-group">
+      <%= form.label :content %>
+      <%= form.rich_text_area :content, class: "form-control" %>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :address, "Adresse" %>
+          <%= form.text_field :address, class: "form-control", placeholder: "Adresse" %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= form.label :country_id, "Pays", class: "required" %>
+          <%= form.collection_select(:country_id, @countries, :id, :name, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %> 
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <%= form.label :city, "Ville" %>
+          <%= form.text_field :city, class: "form-control", placeholder: "Ville" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :email, "Email" %>
+          <%= form.text_field :email, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :phone,"Téléphone" %>
+          <%= form.text_field :phone, class: "form-control", placeholder: "Téléphone" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label :facebook_url, "Facebook" %>
+          <%= form.text_field :facebook_url, class: "form-control", placeholder: "Facebook" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label :twitter_url, "Twitter" %>
+          <%= form.text_field :twitter_url, class: "form-control", placeholder: "Twitter" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label :tiktok_url, "TikTok" %>
+          <%= form.text_field :tiktok_url , class: "form-control", placeholder: "TikTok" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label :instagram_url, "Instagram" %>
+          <%= form.text_field :instagram_url , class: "form-control", placeholder: "Instagram" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label :linkedin_url, "Linkedin" %>
+          <%= form.text_field :linkedin_url , class: "form-control", placeholder: "Linkedin" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label :snapchat_url, "Snapchat" %>
+          <%= form.text_field :snapchat_url , class: "form-control", placeholder: "Snapchat" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+        <%= form.label :cover, "Photo" %>
+          <%= form.file_field :cover , class: "form-control", placeholder: "Photo" %>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row">
+      <div class="col-md-12">
+  <div class="actions text-right">
+    <%= form.submit "Enregistrer", class: "btn btn-primary btn-lg" %>
+  </div>
+</div>
+  </div>
+<% end %>

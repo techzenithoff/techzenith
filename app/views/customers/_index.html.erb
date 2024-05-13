@@ -1,0 +1,24 @@
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.created_at.strftime("%d/%m/%Y") %></td>
+    <td><%= customer.uid %></td>
+    <td><%= customer.first_name %></td>
+    <td><%= customer.last_name %></td>
+    <td><%= customer.civility %></td>
+    <td><%= customer.city.name %></td>
+    <td><%= customer.phone %></td>
+    <td><%= customer.status %></td>
+    <td>
+	    <div class="action-buttons">
+			<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'),  edit_customer_path(customer), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="far fa-trash-alt" aria-hidden="true"></i>
+'), customer_delete_path(customer), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+  </tr>
+<% end %>

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="page-wrapper pd-t-30 pd-b-30">
+        <div class="row">
+            <div class="col-md-8">
+            <div class="card shadow-base  bd-0 ">
+                <div class="card-header bg-transparent pd-20">
+                
+
+                    <h6 class="card-title tx-uppercase tx-12 mg-b-0">Paramètres SMTP</h6>
+                     Informations de votre compte de messagerie
+                     <div class="pull-right">
+                        <span>
+                            <% if smtp_config? %>
+                                <%= link_to "Mettre à jour", edit_smtp_server_setting_path(@smtp_server_setting), title: "Modifier", remote: true %>
+                            <% else %>
+                                <%= link_to "Mettre à jour", new_smtp_server_setting_path, title: "Modifier", remote: true %>
+                            <% end %>
+                        </span>
+                    </div>
+                </div><!-- card-header -->
+                
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tbody class="smtp-server-settings">
+                            <%= render('smtp_settings') %>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            
+            
+            
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="smtp-server-setting-modal" class="c-modal modal fade" data-backdrop="static"></div>

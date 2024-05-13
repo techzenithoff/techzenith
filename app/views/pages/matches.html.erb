@@ -1,0 +1,67 @@
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+  <%= render "layouts/partials/front/breadcrumbs"%>
+</section><!-- End Breadcrumbs -->
+
+<section id="blog" class="blog">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+
+				<h2 class="mb-4">Compétition: <%= @competition_name %></h2>
+				
+				<div class="row matches header">
+					
+						<%= render "shareds/widgets/football_widget" %>
+					
+				</div>
+
+				<div class="content">
+					<% if @matches.present? %>
+					<div class="row">
+						<% @matches.each do |match| %>
+							
+								<div class="col-md-5 team text-center">
+
+									
+									<div class="title"> <%= match.home_team_name %></div>
+									
+									<img class="img-team" src="<%= match.home_team_crest %>" alt="">
+									
+								</div>
+								<div class="col-md-2 team text-center">
+									<h4><%= "#{match.score_home} - #{match.score_away}" %></h4>
+									<div class="match_status_<%= match.status.parameterize %> text-white  p-1">
+										<%= match.status %>
+										<br><%= "le #{match.match_date.strftime("%d/%m/%Y")}" if match.status %>
+									</div>
+								</div>
+								<div class="col-md-5 team text-center">
+									<div class="title"> <%= match.away_team_name %></div>
+									
+									<img class="img-team" src="<%= match.away_team_crest %>" alt="">
+								</div>
+							
+
+						<% end %>
+						</div>
+						<div class="row mt-4">
+							<div class="col-md-12">
+								
+			              <%= will_paginate @matches, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails, class: "pagination load-more-button justify-content-center flex-wrap" %> 
+			              
+			         
+		          </div>
+		        </div>
+					<% end %>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<%= render "shareds/sidebar/sidebar" %>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+	

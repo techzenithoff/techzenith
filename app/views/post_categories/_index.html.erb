@@ -1,0 +1,16 @@
+<% @post_categories.each do |post_category| %>
+  <tr>
+    
+    <td><%= post_category.name %></td>
+    <td>
+        <div class="action-buttons">
+            <%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'),  edit_post_category_path(post_category), title: "Modifier", remote: true %>
+
+
+<%= link_to raw('<i class="far fa-trash-alt"></i>
+'), post_category_delete_path(post_category), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+  </tr>
+<% end %>

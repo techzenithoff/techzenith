@@ -1,0 +1,38 @@
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+              <%= render "layouts/partials/front/breadcrumbs"%>
+
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <% @posts.each do |post| %>
+                <%= render "shareds/posts/post", post: post %>  
+            <% end %>
+
+            
+
+            <div class="blog-pagination">
+              <%= will_paginate @posts, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails, class: "pagination load-more-button justify-content-center" %> 
+              
+            </div>
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+            <%= render "shareds/sidebar/sidebar" %>  
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+

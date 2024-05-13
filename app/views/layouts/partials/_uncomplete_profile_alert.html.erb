@@ -1,0 +1,11 @@
+<div class="container main-container">
+    <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+        <p>
+            Attention! Votre profil est incomplet, veuillez compléter votre profil pour augmenter vos chances. 
+            <%= link_to "Compléter mon profil",edit_profile_path(current_user) %>
+        </p>
+        </div>
+</div>

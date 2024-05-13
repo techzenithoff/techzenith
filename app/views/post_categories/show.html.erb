@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @post_category.uid %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @post_category.slug %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post_category.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post_category.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @post_category.status %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @post_category.account_id %>
+</p>
+
+<%= link_to 'Edit', edit_post_category_path(@post_category) %> |
+<%= link_to 'Back', post_categories_path %>

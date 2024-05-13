@@ -1,0 +1,21 @@
+<div class="news-ticker-section mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="ticker-container">
+          <div class="ticker-caption">
+            <p>URGENT</p>
+          </div>
+          <ul>
+            <% @ticker_posts.each do |ticker_post| %>
+            <div>
+              <li><span><%= link_to ticker_post.title, post_path(ticker_post) %></span></li>
+            </div>
+
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

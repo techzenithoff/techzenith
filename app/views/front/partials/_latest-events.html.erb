@@ -1,0 +1,14 @@
+<div class="blog-list style-one mt-100">
+    <div class="container"> 
+      <div class="heading3 text-center">Évenements récents</div>
+      <div class="row row-gap-32 mt-40 mb-5">
+        <% @latest_events.each do |event| %>
+          <%= render "shareds/events/event", event: event %>  
+        <% end %>
+        
+              
+             
+              
+      </div>
+    </div>
+</div>

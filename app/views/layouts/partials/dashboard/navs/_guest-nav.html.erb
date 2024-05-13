@@ -1,0 +1,74 @@
+<!-- ########## START: LEFT PANEL ########## -->
+
+      <ul class="br-sideleft-menu">
+       <li class="br-menu-item">
+          <%= link_to  raw('<i class="fa fa-home tx-20"></i> <span class="menu-item-label">Tableau de bord</span>'), dashboard_path, class: "br-menu-link active" %>
+        </li><!-- br-menu-item -->
+
+        <li class="br-menu-item">
+          <%= link_to  raw('<i class="fa fa-home tx-20"></i> <span class="menu-item-label">Courrier d\'arrivée</span>'), arrival_mails_path, class: "br-menu-link" %>
+        </li><!-- br-menu-item -->
+
+        <li class="br-menu-item">
+          <%= link_to  raw('<i class="fa fa-home tx-20"></i> <span class="menu-item-label">Courrier départ</span>'), departure_mails_path, class: "br-menu-link" %>
+        </li><!-- br-menu-item -->
+
+
+
+       
+
+
+
+         
+        
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-cogs tx-20"></i>
+            <span class="menu-item-label">Paramètres</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            
+            <li class="sub-item">
+                <%= link_to  "Utilisateurs", root_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Types registre", registry_types_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Registres", registries_path, class: "sub-link" %>
+            </li>
+             <li class="sub-item">
+                <%= link_to  "Services", services_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Supports", supports_path, class: "sub-link" %>
+            </li>
+            <li class="sub-item">
+                <%= link_to  "Natures", natures_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Types correspondant", correspondent_types_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Domaines d'activité", activity_fields_path, class: "sub-link" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Correspondants", correspondents_path, class: "sub-link" %>
+            </li>
+
+          </ul>
+        </li>
+       
+      </ul><!-- br-sideleft-menu -->
+
+      
+       
+        
+      </div><!-- info-list -->
+
+    <!-- ########## END: LEFT PANEL ########## -->

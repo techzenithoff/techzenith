@@ -1,0 +1,50 @@
+
+
+	
+
+						<div class="text-center mt-4">
+
+							<h1 class="h2">Welcome back!</h1>
+							<p class="lead">
+								Connectez-vous à votre compte pour continuer
+							</p>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<div class="m-sm-3">
+									<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+										<div class="mb-3">
+											<label class="form-label">Email</label>
+											
+											<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg",  placeholder: "Votre e-mail" %>
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Password</label>
+											
+											<%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-lg",  placeholder: "Votre mot de passe" %>
+										</div>
+										<div>
+											<div class="form-check align-items-center">
+												
+
+												<% if devise_mapping.rememberable? -%>
+													<div class="form-group">
+													<%= f.check_box :remember_me, class: "form-check-input" %>
+													<%= f.label "Se souvenir de moi", class: "form-check-label text-small" %>
+													</div>
+												<% end -%>
+											</div>
+										</div>
+										<div class="d-grid gap-2 mt-3">
+											
+											<%= f.submit "Se connecter", class: "btn btn-lg btn-primary" %>
+										</div>
+									<% end %>
+								</div>
+							</div>
+						</div>
+						<div class="text-center mb-3">
+							Vous n'avez pas de compte ? <a href="pages-sign-up.html">Sign up</a>
+						</div>
+					

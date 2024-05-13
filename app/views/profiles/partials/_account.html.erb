@@ -1,0 +1,16 @@
+
+<fieldset>
+    <legend><h2>Mon compte</h2></legend>
+    <hr />
+    
+    <div class="row">
+        <p>
+    La suppression de votre profil est une action irréversible. Cela ne peut pas être annulé en contactant le support. Réfléchissez-bien avant de continuer !
+</p>
+        <p>
+        <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn btn-danger btn-block" %>
+        </p>
+    </div>
+
+
+</fieldset>

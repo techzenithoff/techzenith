@@ -1,0 +1,125 @@
+<!-- ########## START: LEFT PANEL ########## -->
+
+      <ul class="br-sideleft-menu">
+       <li class="br-menu-item">
+          <%= link_to  raw('<i class="fa fa-home tx-20"></i> <span class="menu-item-label">Tableau de bord</span>'), dashboard_path, class: "br-menu-link #{current? "active", dashboard_path}" %>
+        </li><!-- br-menu-item -->
+
+        <li class="br-menu-item">
+          <%= link_to  raw('<i class="fa fa-id-card-o tx-20"></i> <span class="menu-item-label">Portfolios</span>'), root_path, class: "br-menu-link" %>
+        </li><!-- br-menu-item -->
+        <li class="br-menu-item">
+          <%= link_to  raw('<i class="fa fa-user-plus tx-20"></i> <span class="menu-item-label">Invitations</span>'), root_path, class: "br-menu-link" %>
+        </li><!-- br-menu-item -->
+
+
+       <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-list-alt tx-20"></i>
+            <span class="menu-item-label">Abonnements</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            
+            <li class="sub-item">
+                <%= link_to  "Liste des abonnements", subscription_types_path, class: "sub-link #{current? "active", subscription_types_path}" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Plans d'abonnement", subscription_packs_path, class: "sub-link #{current? "active", subscription_packs_path}" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Fonctionalités", subscription_pack_features_path, class: "sub-link #{current? "active", subscription_pack_features_path}" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Types d'abonnement", subscription_types_path, class: "sub-link #{current? "active", subscription_types_path}" %>
+            </li>
+
+      
+
+
+          </ul>
+        </li>
+
+
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-building-o tx-20"></i>
+            <span class="menu-item-label">Organisations</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            
+            <li class="sub-item">
+                <%= link_to  "Liste des organisations", root_path, class: "sub-link #{current? "active", root_path}" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Types d'organisation", organization_types_path, class: "sub-link #{current? "active", organization_types_path}" %>
+            </li>
+
+            
+      
+
+
+          </ul>
+        </li>
+         
+
+        
+        
+         
+            
+
+
+
+          </ul>
+        </li>
+
+
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-cog tx-20"></i>
+            <span class="menu-item-label">Paramètres</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            
+            <li class="sub-item">
+                <%= link_to  "Rôles", roles_path, class: "sub-link #{current? "active", roles_path}" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Utilisateurs", all_users_path, class: "sub-link #{current? "active", all_users_path}" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Domaines d'activité", activity_fields_path, class: "sub-link #{current? "active", activity_fields_path}" %>
+            </li>
+
+            <li class="sub-item">
+                <%= link_to  "Serveur SMTP", smtp_configs_path, class: "sub-link #{current? "active", smtp_configs_path}" %>
+            </li>
+
+            
+
+            
+
+
+
+          
+
+
+
+          </ul>
+        </li>
+
+
+       
+      </ul><!-- br-sideleft-menu -->
+
+      
+       
+        
+      </div><!-- info-list -->
+
+    <!-- ########## END: LEFT PANEL ########## -->

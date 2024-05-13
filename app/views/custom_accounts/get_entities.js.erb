@@ -1,0 +1,5 @@
+$('#user_profile_attributes_entity_id').empty();
+$('#user_profile_attributes_entity_id').append( $('<option value="">Sélectionner</option>'));
+<% @entities.each do |entity| %>
+  $('#user_profile_attributes_entity_id').append($('<option value="<%= entity.id %>"><%= entity.name %></option>'));
+<% end %>

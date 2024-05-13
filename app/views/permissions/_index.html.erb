@@ -1,0 +1,26 @@
+<% @permissions.each do |permission| %>
+    <tr>
+    <td><%= role(permission.role_id).name %></td>
+   
+    <td><%= feature(permission.feature_id).name %></td>
+    <td>
+    <% permission.permission_items.each do |item| %>
+        <span class="permission-item">
+        <%= t("#{item.action_name}") %>
+        </span>
+    <% end %>
+    </td>
+    <td>
+	    <div class="action-buttons">
+			<%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'),  edit_permission_path(permission), title: "Modifier", remote: true %>
+
+
+
+
+<%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"></i>
+'), permission_delete_path(permission), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+    </tr>
+<% end %>

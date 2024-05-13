@@ -1,0 +1,49 @@
+<% title "Mot de passe oublié" %>
+<% description "Réinitailser votre mot de passe" %>
+<% keywords  "Mot de passe oublié, réinitialiser, changer de mot de passe"  %>
+<div class="signin-page">
+    <div class="signin--page__header">
+			<div class="signin-logo tx-center tx-28 tx-bold tx-inverse">
+				<%= render 'components/logo/logo' %>
+			</div>
+		<div class="tx-center mg-b-20">Mot de passe oublié?</div>
+	</div>
+	
+	<div class="sigin-page__body">
+
+
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= render "accounts/shared/error_messages" %>
+
+              
+      
+              <div class="form-group">
+                
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Votre adresse e-mail" %>
+              </div>
+
+              <div class="form-group text-center">
+
+                  <div class="recaptcha_error">
+                    
+                  </div>
+
+                  <div>
+                    
+                  </div>
+                </div>
+                
+              <div class="form-group login">
+                <%= f.submit "Réinitialisé", class: "btn btn-primary btn-block" %>
+              </div>
+            <% end %>
+
+            
+          </div>
+          <div class="o-line">
+        <div class="mg-t-10 tx-center">
+			<%= link_to "Se connecter", new_session_path(resource_name), class: "tx-info" %> <br />
+      			<%= link_to "S'inscrire", new_registration_path(resource_name), class: "tx-info" %>
+
+		</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="dropdown">
+    <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
+        <span class="logged-name hidden-md-down"><%= current_account.login %></span>
+            <%= thumb_avatar(32)%>
+        <span class="square-10 bg-success"></span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-header wd-250">
+        <div class="tx-center">
+        <%= thumb_avatar(80)%>
+
+        <h6 class="logged-fullname"><%= current_account.email %></h6>
+        <p><%= current_account.email %></p>
+        </div>
+        <hr>
+        <div class="tx-center">
+        
+        </div>
+        
+        <ul class="list-unstyled user-profile-nav">
+            
+            
+            <% if current_account.customer? %>
+              <%= link_to "Mon profil" ,   edit_customer_profile_path(current_account.accountable.uid), class: "dropdown-item" %> 
+            <% elsif current_account.taximan? %>
+              <%= link_to "Mon profil" ,   edit_taximan_profile_path(current_account.accountable.uid), class: "dropdown-item" %> 
+            <% else %>
+              <%= link_to "Mon profil" ,   edit_user_path(current_account.accountable.uid), class: "dropdown-item" %> 
+            <%  end %>
+            <div class="dropdown-divider"></div>
+            <li><%= link_to "Se déconnecter", destroy_account_session_path, method: :delete,  class: "dropdown-item"  %></li>
+
+
+        </ul>
+    </div><!-- dropdown-menu -->
+</div><!-- dropdown -->

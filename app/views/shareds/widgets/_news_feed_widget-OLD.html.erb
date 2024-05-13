@@ -1,0 +1,40 @@
+  <div class="o-block-ad-n-newsfeed o-banana-split__ad-n-newsfeed">
+            
+        <aside data-org-name="1" data-org-type="banana-split--main-with-related" class="o-aside-content  o-aside-content--news-feed">
+          <div class="o-aside-content__row o-aside-content__row--center">
+            <div class="o-aside-content__title a-aside-title">
+              <span class="a-aside-title__content">L'Info en continu</span>
+            </div>
+          </div>
+                
+          <ol class="o-layout-list o-layout-list--news-feed">
+            <% @recent_posts.each do |recent_post| %>
+            <li class="o-layout-list__item">
+              <div class="m-item-news-feed">
+                <div class="news__metadata">
+                  <div class="news__metadata__time">
+                    <time><%= recent_post.created_at.strftime("%d/%m") %></time>
+                  </div>    
+                </div>
+                <div class="news__content">
+                  <div class="news__content__title">
+                      <h2><%= link_to recent_post.title.truncate(100, omission: ' ...'), post_path(recent_post) %></h2>
+                  </div>
+                </div>
+              </div>
+            </li>
+           <% end %>
+                </ol>
+
+              <div class="o-aside-content__row o-aside-content__row--flex-end">
+                <%= link_to "Toute l'actualité en direct", blog_path %>
+                <!--
+                    <a class="o-aside-content__see-more" href="/fr/info-en-continu/">
+                        Toute l'actualité en direct <span class="a-svg a-svg--picto-right-arrow"></span>
+                    </a>
+                    -->
+                </div>
+        </aside>
+    
+        
+      </div>

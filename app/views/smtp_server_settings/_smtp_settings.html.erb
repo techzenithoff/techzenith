@@ -1,0 +1,35 @@
+
+<tr>
+    <td class="uppercase">Identifiant d'utilisateur</td>
+    <td><%= @smtp_server_setting.user_name if @smtp_server_setting.present? %></td>
+</tr>
+
+
+<tr>
+    <td class="uppercase">Adresse serveur SMTP</td>
+    <td><%= @smtp_server_setting.address if @smtp_server_setting.present? %></td>
+</tr>
+
+<tr>
+    <td class="uppercase">Domaine</td>
+    <td><%= @smtp_server_setting.domain if @smtp_server_setting.present? %></td>
+</tr>
+
+<tr>
+<td class="uppercase">Port SMTP</td>
+<td><%= @smtp_server_setting.port if @smtp_server_setting.present? %></td>
+</tr>
+
+<tr>
+<td class="uppercase">Type d'authentification</td>
+<td><%= @smtp_server_setting.authentification if @smtp_server_setting.present? %></td>
+</tr>
+
+<tr>
+<td class="uppercase">Start TLS auto </td>
+<td><%= @smtp_server_setting.enable_starttls_auto if @smtp_server_setting.present? %></td>
+</tr>
+<tr>
+<td class="uppercase"> SSL </td>
+<td><%= @smtp_server_setting.ssl if @smtp_server_setting.present? %></td>
+</tr>

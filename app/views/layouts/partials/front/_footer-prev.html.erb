@@ -1,0 +1,236 @@
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <!-- <h3>Flexor</h3> -->
+            <div class="footer logo">
+              <%= link_to root_url, class: "logo" do %>
+                <%= image_pack_tag "media/images/logo/logo.png", class: "logo" %> 
+              <% end %>
+            </div>
+            <p>
+              Missabugu à 100 mètres du 3éme Pont <br>
+              Bamako, Mali <br><br>
+              <strong>Téléphone:</strong> +223 70 70 70 70<br>
+              <strong>Email:</strong> info@renouveautv.africa<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Liens utiles</h4>
+            <ul>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                <%= link_to "A propos",  about_us_path %>
+              </li>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+               
+                <%= link_to "PMU Mali", pmu_mali_path %>
+              </li>
+              
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                
+                <%= link_to "Résultats match", matches_path(competition: "PD") %>
+              </li>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                <a href="#">Annuaire</a>
+              </li>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                <a href="#">Immobilier</a>
+              </li>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                <a href="#">Appel d’offres </a>
+              </li>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                <a href="#">Offre d’emploi </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Programmes</h4>
+            <ul>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                
+                <%= link_to "Télé fait son show", emission_path(Emission.friendly.find("tele-fait-son-show")) %>
+              </li>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                
+                <%= link_to "Bikodo", emission_path(Emission.friendly.find("bikodo")) %>
+              </li>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                
+                <%= link_to "Bon appétit", emission_path(Emission.friendly.find("bon-appetit")) %>
+              </li>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                
+                <%= link_to "Grand soir", emission_path(Emission.friendly.find("7-7")) %>
+              </li>
+              <li>
+                <i class="bx bx-chevron-right"></i> 
+                
+                <%= link_to "Sept sur Sept 7/7", emission_path(Emission.friendly.find("7-7")) %>
+              </li>
+              <li><i class="bx bx-chevron-right"></i> 
+                
+                <%= link_to "Grand jury", emission_path(Emission.friendly.find("grand-jury")) %>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Restez informer de toutes nos actualités.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="S'inscrire">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-lg-flex py-4">
+
+      <div class="me-lg-auto text-center text-lg-start">
+        <div class="copyright">
+          &copy;<%= "#{Time.now.year} #{APPLICATION_NAME}" %>  - Tout droits réservés
+        </div>
+        <div class="credits">
+          <!--Developpé par <a href="https://www.technzenith.com/">TechZenith Technologies</a> -->
+          
+        </div>
+      </div>
+      <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
+        <!--<b>Suivez-nous sur: </b>-->
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+   <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+   </a>
+
+<!--
+<div class="footer-webradio-player  grey bg">
+<audio src="https://www.partyvibe.com:8060/;listen.pls?sid=1" autoplay="false" controls="false"><audio>
+</div>
+
+-->
+<!--
+<div class="footer-webradio-player grey bg">
+<div class="players" id="player2-container">
+
+            
+  <div class="media-wrapper">
+      <audio src="https://www.partyvibeA.com:8060/;listen.pls?sid=1" autoplay="false" controls="false"><audio>
+  </div>
+           
+            
+
+        
+    </div>
+</div>
+-->
+
+
+
+<!--
+<div class="radio-player grey bg">
+
+  <audio src="https://www.partyvibe.com:8060/;listen.pls?sid=1" class="visually-hidden" id="stream">
+    
+  </audio>
+  <div class="player-controls">
+    <button name="play-pause" class="button play-pause-button" aria-label="Play/pause">
+      <i class="fas fa-play" aria-hidden></i>
+    </button>
+
+    <div class="volume-and-title">
+      <div class="currently-playing" aria-label="Currently playing">
+        <span class="currently-playing-label">Écoutez RenouveauFM en direct</span>
+        <span class="currently-playing-title">Listen to Some Radio Station</span>
+      </div>
+
+      <div class="volume-controls">
+        <button name="mute" class="button mute-button" aria-label="Mute/unmute">
+          <i class="fas fa-volume-down" aria-hidden></i>
+        </button>
+
+        <input type="range" name="volume" class="volume" min="0" max="1" step="0.05" value="0.2" aria-label="Volume">
+      </div>
+    </div>
+  </div>
+</div>
+
+-->
+
+<!--
+<div class="audio-player grey">
+  <div class="holder">
+    <div class="cover">
+      < image_pack_tag "media/images/cover/cover.PNG" >
+    </div>
+    <div class="audio-wrapper" id="player-container">
+      <div id="player">
+        <audio src="https://www.partyvibe.com:8060/;listen.pls?sid=1" id="stream">
+      </div>
+      <div>
+        <p class="title">Renouveau FM en direct</p>
+      </div>
+    </div>
+    <div class="player-controls">
+      
+      <button name="play-pause" class="button play-pause-button" aria-label="Play/pause">
+        <i class="fas fa-play" aria-hidden></i>
+      </button>
+
+      <div class="volume-and-title">
+        <div class="volume-controls">
+          <button name="mute" class="button mute-button" aria-label="Mute/unmute">
+            <i class="fas fa-volume-down" aria-hidden></i>
+          </button>
+
+          <input type="range" name="volume" class="volume" min="0" max="1" step="0.05" value="0.2" aria-label="Volume">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+-->
+
+
+<div class="player">
+   <div class="left"></div>
+   <div class="right">
+      <div class="top">
+         <a class="song" href="https://open.spotify.com/track/52LlzTfdulBMiwH4BZy5Sq?si=1c1rwqNYSf6ZaaRbzlstLQ">RenouveauFM </a>
+         <a class="artist" href="https://open.spotify.com/artist/6OqhFYFJDnBBHas02HopPT?si=vQaSwY1DRkyhj-eoKZlMrw">Écoutez en direct</a>
+      </div>
+      <div class="bottom">
+       <audio src="https://www.partyvibe.com:8060/;listen.pls?sid=1" autostart="0" autostart="false" preload ="none" autoplay="false" controls="true" muted><audio>
+         <!--<video controls="" _autoplay="" name="media"><source src="https://i.koya.io/Kero%20Kero%20Bonito%20-%20Let's%20Go%20To%20The%20Forest.mp3" type="audio/mpeg"></video>-->
+      </div>
+   </div>
+</div>

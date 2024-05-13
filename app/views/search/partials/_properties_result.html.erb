@@ -1,0 +1,31 @@
+<% if @properties.blank? %>
+    <div class="container main-container">
+        <div class="card">
+            <div class="card-body text-center">
+                <p>
+                    <h5>Pas de resulat pour cette recherche!</h5>
+                </p>
+            </div>
+        </div>
+    </div>
+    <% else %>
+
+    <div class="container main-container">
+        
+        <div class="row">
+            <% @properties.each do |property| %>
+                <div class="col-md-4 property-item">	
+                	<%= render "shared/property/property", property: property %>	
+				</div>
+        	<% end %>
+                   
+        </div>
+		<div class="row">
+			<div class="col-md-12">
+				<%= will_paginate @properties, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails, class: "pagination load-more-button" %> 
+			</div>
+		</div>
+            
+    </div>
+
+<% end %>

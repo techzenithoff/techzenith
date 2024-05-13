@@ -1,0 +1,13 @@
+<% @event_categories.each do |event_category| %>
+  <tr> 
+    <td><%= event_category.title %></td>
+    <td>
+      <div class="action-buttons">
+        <%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>'),  edit_event_category_path(event_category), title: "Modifier", remote: true %>
+
+    <%= link_to raw('<i class="far fa-trash-alt"></i>
+'), event_category_delete_path(event_category), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

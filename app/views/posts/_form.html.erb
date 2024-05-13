@@ -1,0 +1,77 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-9">
+      
+
+      <div class="form-group">
+        <%= form.label :title, "Titre", class: "required" %>
+        <%= form.text_field :title, class: "form-control", placeholder: "Saisissez le titre", required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :content, "Contenu" %>
+         <%= form.rich_text_area :content, class: "form-control", rows: 25, required: true %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="side-content">
+        <div class="card">
+          <h5 class="card-header">Catégorie</h5>
+          <div class="card-body">
+            <!-- <h5 class="card-title">Special title treatment</h5> -->
+            <p class="card-text">
+              <div class="form-group customSelect">
+                <%= form.label :post_category_id, "Catégorie", class: "required" %>
+                <%= form.collection_select(:post_category_id, @post_categories, :id, :name, {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %> 
+              </div>
+            </p>
+           
+          </div>
+        </div>
+
+        <div class="card mt-4">
+            <h5 class="card-header">Image mise en avant </h5>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5> -->
+              <p class="card-text">
+                <%= form.label :thumbnail, "Définir l'image mise en avant" %>
+                <%= form.file_field :thumbnail, class: "form-control", placeholder: "Saisissez le titre", required: true %>
+
+              </p>
+             
+            </div>
+          </div>
+
+        
+
+        <div class="actions mt-4">
+          <div class="card">
+            <h5 class="card-header">Publier</h5>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5> -->
+              <p class="card-text">
+                <%= form.submit "Publier", class: "btn btn-primary btn-lg" %>
+              </p>
+             
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+  
+
+  
+<% end %>

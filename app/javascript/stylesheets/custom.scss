@@ -1,0 +1,134 @@
+.frame-space-after-extra-small {
+    margin-bottom: 1em;
+}
+.frame-space-before-small {
+    margin-top: 2em;
+}
+
+@media screen and (max-width: 1440px){
+.inner, .frame-hero-form .jobsearch__form, .frame-hero-form .tx-powermail .container-fluid, .frame-hero-form .tx-powermail .powermail_create {
+    padding-left: 6%;
+    padding-right: 6%;
+}
+}
+.inner, .frame-hero-form .jobsearch__form, .frame-hero-form .tx-powermail .container-fluid, .frame-hero-form .tx-powermail .powermail_create {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.frame-space-after-medium {
+    margin-bottom: 3em;
+}
+
+.btn.btn-big, .btn-big.btn-link.arrow, button.btn-big, input[type=submit].btn-big {
+    padding: 17px 38px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.btn.freedom-red, .freedom-red.btn-link.arrow, button.freedom-red, input[type=submit].freedom-red {
+    background-color: #FF0a2b;
+    color: #fff;
+}
+.freedom-red {
+    color: #ff0a2b;
+}
+
+@media screen and (max-width: 1440px){
+.content>.frame {
+    margin: 150px auto;
+}}
+
+.inner>.flex__container, .frame-hero-form .jobsearch__form>.flex__container, .frame-hero-form .tx-powermail .container-fluid>.flex__container, .frame-hero-form .tx-powermail .powermail_create>.flex__container {
+    padding-left: 0;
+    padding-right: 0;
+}
+.flex__container.removespacing__1 {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.flex__container {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.flex__container.removespacing__1>.column {
+    padding-left: 0;
+    padding-right: 0;
+}
+.flex__container.sameheight>.column>.frame {
+    height: 100%;
+}
+.ce-image.ce-center {
+    text-align: center;
+}
+.ce-textpic, .ce-image, .ce-nowrap .ce-bodytext, .ce-gallery, .ce-row, .ce-uploads li, .ce-uploads div {
+    overflow: visible;
+}
+.ce-left .ce-gallery, .ce-column, .ce-center .ce-outer, .ce-center .ce-inner {
+    float: none;
+    width: 100%;
+    right: auto;
+    left: auto;
+}
+.ce-center .ce-outer {
+    position: relative;
+    float: right;
+    right: 50%;
+}
+center .image {
+    margin: 0 auto;
+}
+.ce-center .ce-gallery figure {
+    margin-left: auto;
+    margin-right: auto;
+}
+.ce-gallery figure {
+    position: relative;
+}
+.ce-gallery figure {
+    display: table;
+    margin: 0;
+}
+.frame-layout-100{
+	background-color: #f3f3f3;
+
+}
+
+@media screen and (max-width: 1440px){
+.content>.frame {
+    margin: 150px auto;
+}
+.content .frame-space-after-extra-small {
+    margin-bottom: 20px !important;
+}
+.content .frame-space-before-medium {
+    margin-top: 80px !important;
+}}
+
+.inner>.flex__container, .frame-hero-form .jobsearch__form>.flex__container, .frame-hero-form .tx-powermail .container-fluid>.flex__container, .frame-hero-form .tx-powermail .powermail_create>.flex__container {
+    padding-left: 0;
+    padding-right: 0;
+}
+.flex__container.align__center {
+    align-items: center;
+}
+.inner > .flex__container {
+    padding-left: 0;
+    padding-right: 0;
+}
+.flex__container.align__center {
+    align-items: center;
+}
+.flex__container {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+}

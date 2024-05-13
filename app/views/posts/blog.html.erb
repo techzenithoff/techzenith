@@ -1,0 +1,67 @@
+
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+  <%= render "layouts/partials/front/breadcrumbs"%>
+</section><!-- End Breadcrumbs -->
+
+<!-- ======= Blog Section ======= -->
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row">
+      <div class="col-lg-8 block ">
+
+        <div class="row">
+          <% @posts.each do |post| %>
+            <div class="col-md-6 mb-4" data-aos="fade-up">
+              <%= link_to post_path(post) do %>
+              <div class="post-thumbnail">
+                <%= post_thumbnail(post, "", "img-fluid")%>
+              </div>
+              <% end %>
+              <div class="post-title">
+                <h2 class="entry-title">
+                  <%= link_to post.title.truncate_words(40, omission: ' ...'), post_path(post) %>
+                </h2>
+              </div>
+              <div class="post-meta">
+                  <ul>
+                  <li class="d-flex align-items-center">
+                      <i class="far fa-clock"></i> 
+                      <a href="#">
+                      <time><%= post.created_at.strftime("%d/%m/%Y") %></time>
+                      </a>
+                    </li>
+                    <li class="d-flex align-items-center post-category">
+                      <i class="fas fa-rss-square"></i>
+                      <a href="#"><%= post.post_category.name %></a>
+                    </li> 
+                  </ul>
+                </div>
+              <div class="post-excerpt mb-3">
+                <%=  post.content.to_plain_text.truncate_words(20, omission: ' ...') %>
+              </div>
+            </div>
+
+          
+          <% end %>
+        </div>
+
+        
+
+        <div class="blog-pagination mt-5">
+          <%= will_paginate @posts, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails, class: "pagination load-more-button justify-content-center" %> 
+          
+        </div>
+
+      </div><!-- End blog entries list -->
+
+      <div class="col-lg-4">
+        <%= render "shareds/sidebar/sidebar" %>  
+      </div><!-- End blog sidebar -->
+
+    </div>
+
+  </div>
+</section><!-- End Blog Section -->
+

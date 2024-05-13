@@ -1,0 +1,58 @@
+<%= form_with(model: message, local: true) do |form| %>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :name, "Nom complet", class: "required" %>
+        <%= form.text_field :name, class: "form-control", placeholder: "Nom complet" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :phone_number, "Téléphone", class: "required" %>
+        <%= form.text_field :phone_number, class: "form-control" , placeholder: "Téléphone", required: true%>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :email, "Email", class: "required" %>
+        <%= form.email_field :email, class: "form-control", placeholder: "Email", required: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md">
+      
+
+     
+      <div class="form-group">
+        <%= form.label :body, class: "required" %>
+        <%= form.text_area :body , rows: 10, class: "form-control", placeholder: "Votre message ici!", required: true %>
+      </div>
+      <div class="form-group text-center">
+        <div class="recaptcha_error">
+              <%= flash[:recaptcha_error] %>
+            </div>
+      </div>
+ 
+      <div class="form-group">
+        <%= form.submit "Envoyer", class: "btn btn-primary " %>
+      </div>
+    </div>
+  </div>
+<% end %>

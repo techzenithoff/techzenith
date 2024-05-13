@@ -1,0 +1,80 @@
+<%= form_with(model: user, local: false) do |form| %>
+  <div class="modal-body">
+    <ul class="errors">
+    </ul>
+      <!-- Fieldset informations -->
+      <fieldset>
+        <legend>Informations personnelles</legend>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label :first_name, "Prénom", class: "required" %>
+              <%= form.text_field :first_name, class: "form-control", placeholder: "Prénom", required: true %>
+            </div>
+          </div>
+          <div class="col-md-4">
+
+            <div class="form-group">
+              <%= form.label :last_name , "Nom", class: "required" %>
+              <%= form.text_field :last_name, class: "form-control", placeholder: "Nom", required: true %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label :civility , "Sexe", class: "required" %>
+              <%= form.select :civility, GENDERS, {prompt: "Sélectionner"}, class: "form-control", placeholder: "Prénom" %>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+     
+      
+
+      <!-- Fieldset informations -->
+      <fieldset>
+        <legend>Identifiants </legend>
+        
+        
+      
+     
+      <%= form.fields_for :account do |account| %>
+        <div class="row">  
+          <div class="form-group col-md-12 customSelect">
+              <%= account.label "Profil", class: "required" %>
+              <%= account.collection_select(:role_id, @roles,  :id, :name , {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %>
+                                      
+          </div>
+                                      
+          <div class="form-group col-md-12">
+              <%= account.label :email, class: "required" %><br />
+              <%= account.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "E-mail", required: true %>
+          </div>            
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <%= account.label :password,"Mot de passe" %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= account.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Mot de passe" %>
+          </div>
+            
+          <div class="form-group col-md-6">
+            <%= account.label :password_confirmation,"Confirmation du mot de passe" %><br />
+            <%= account.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirmation du mot de passe" %>
+          </div>
+          
+        </div>
+
+      <% end %>
+      </fieldset>
+
+  
+
+  </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit "Enregistrer", class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<% @events.each do |event| %>
+      <tr>
+        <td><%= event.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= event.title %></td>
+        <td><%= event.event_category.title %></td>
+        <td><%= event.start_date.strftime("%d/%m/%Y") %></td>
+        <td><%= event.end_date.strftime("%d/%m/%Y") %></td>
+        <td><%= event.country.name %></td>
+        <td><%= event.city %></td>
+        <td><%= event.address %></td>
+        <td><%= event.phone %></td>
+        <td><%= event.email %></td>
+        
+        <td>
+      <div class="action-buttons">
+        <%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>'),  edit_event_path(event), title: "Modifier", remote: false %>
+
+    <%= link_to raw('<i class="far fa-trash-alt"></i>
+'), event_delete_path(event), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+      </tr>
+    <% end %>

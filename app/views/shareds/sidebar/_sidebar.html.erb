@@ -1,0 +1,63 @@
+<div class="sidebar ads">
+  <div class="side-ads text-center mb-3">
+    <%= image_pack_tag "ads/ban1.jpg", alt: "" %>
+  </div>
+</div>
+
+<div class="sidebar search">
+  <%= render "shareds/sidebar/partials/searchbar" %>
+</div>
+
+
+
+<!-- Football widgets -->
+<div class="sidebar football-widget">
+  <h3 class="sidebar-title">Resultats des Matchs</h3>
+  <%= render "shareds/widgets/football_widget" %>
+</div>
+
+<!-- Football widgets -->
+<div class="sidebar football-widget">
+  <h3 class="sidebar-title">Resultats PMU</h3>
+  <%= render "shareds/widgets/pmu_results_widget" %>
+</div>
+<!--
+<div class="sidebar categories">
+  <h3 class="sidebar-title">Catégories</h3>
+    render "shareds/widgets/post_categories_widget" 
+</div>
+-->
+
+<% if controller_name == "posts"  %>
+  <div class="sidebar recent-videos">
+    <h3 class="sidebar-title">Vidéos recentes</h3>
+    <%= render "shareds/widgets/recent_videos_widget" %>
+  </div>
+<% end %>
+<% if controller_name == "emissions"  %>
+<div class="sidebar recent-posts">
+  <h3 class="sidebar-title">Actualité recente</h3>
+  <%= render "shareds/widgets/recent_posts_widget" %>
+</div>
+<% end %>
+
+
+              <!--
+              <h3 class="sidebar-title">Tags</h3>
+              <div class="sidebar-item tags">
+                <ul>
+                  <li><a href="#">App</a></li>
+                  <li><a href="#">IT</a></li>
+                  <li><a href="#">Business</a></li>
+                  <li><a href="#">Mac</a></li>
+                  <li><a href="#">Design</a></li>
+                  <li><a href="#">Office</a></li>
+                  <li><a href="#">Creative</a></li>
+                  <li><a href="#">Studio</a></li>
+                  <li><a href="#">Smart</a></li>
+                  <li><a href="#">Tips</a></li>
+                  <li><a href="#">Marketing</a></li>
+                </ul>
+              </div> --><!-- End sidebar tags-->
+
+            </div><!-- End sidebar -->

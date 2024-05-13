@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <!-- Navbar band -->
+    <div class= "navbar-brand">
+      <%= link_to root_url, class: "navbar-brand" do %>
+        <%= image_tag "logo/logo.png", class: "logo" %> 
+      <% end %>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContentt" aria-controls="navbarSupportedContentt" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContentt">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "A propos", show_page_path("a-propos"), class: "nav-link" %>
+      </li>
+
+          
+      <li class="nav-item">
+        <%= link_to "Abonnements", pricings_path, class: "nav-link" %>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nos offres</a>
+        <div class="dropdown-menu">
+          <%= link_to "Taxi privé", show_page_path("taxi-prive"), class: "dropdown-item" %>
+          <%= link_to "Taxi VIP", show_page_path("taxi-vip"), class: "dropdown-item" %>
+          <%= link_to "Véhicule privé", show_page_path("vehicule-prive"), class: "dropdown-item" %>
+          <%= link_to "Taxi moto", show_page_path("taxi-moto"), class: "dropdown-item" %>
+
+          
+        </div>
+      </li>
+
+      
+      <li class="nav-item">
+        <%= link_to "Contactez-nous", contact_form_path, class: "nav-link" %>
+      </li>
+      
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      
+      <% if account_signed_in? %>
+        <li class="nav-item">
+        <!-- <a class="nav-link" href="#">Link</a> -->
+          <%= link_to raw('<i class="fa fa-user" aria-hidden="true"></i>
+ Mon compte'), dashboard_path, class: "btn btn-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Se déconnecter", destroy_account_session_path, method: :delete,  class: "btn btn-link"  %>
+        </li>
+
+        <% else %>
+        <li class="nav-item">
+        <!-- <a class="nav-link" href="#">Link</a> -->
+          <%= link_to "Se connecter", new_account_session_path, class: "btn btn-link" %>
+        </li>
+        <li class="nav-item">
+        <!-- <a class="nav-link" href="#">Link</a> -->
+          <%= link_to "S'inscrire", new_account_registration_path, class: "btn btn-link" %>
+        </li>
+        <li class="nav-item">
+        <!-- <a class="nav-link" href="#">Link</a> -->
+          <%= link_to "Dévenir chauffeur", become_driver_path, class: "btn btn-primary btn-lg" %>
+        </li>
+      <% end %>
+      
+     
+      
+    </ul>
+   
+
+   
+      
+   </div>
+  </div>
+</nav>
+
+
+
+

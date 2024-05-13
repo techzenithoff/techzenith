@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @candidate.uid %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @candidate.slug %>
+</p>
+
+<p>
+  <strong>Candidate category:</strong>
+  <%= @candidate.candidate_category_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @candidate.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @candidate.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @candidate.content %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @candidate.status %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @candidate.account_id %>
+</p>
+
+<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
+<%= link_to 'Back', candidates_path %>

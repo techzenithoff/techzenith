@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= "Tableau de bord - #{APPLICATION_NAME}" %></title>	
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+		<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
+
+
+
+	</head>
+
+  <body >
+		
+		<%= render :partial => 'layouts/partials/flash_messages', :flash => flash %>
+		<!-- Left Sidebar -->
+			<%= render('layouts/partials/dashboard/header') %>
+
+		<!-- End Left sidebar -->
+<%= render('layouts/partials/dashboard/sidebar') %>
+		<div class="br-mainpanel">
+				
+
+					<%= yield %>
+				  
+
+		</div>
+	 
+
+	
+  </body>
+</html>

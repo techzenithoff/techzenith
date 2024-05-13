@@ -1,0 +1,104 @@
+<%= form_with(model: customer, url: update_customer_path) do |form| %>
+  <% if customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+        <% customer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!-- Fieldset informations -->
+  <fieldset>
+    <legend>Informations personnelles</legend>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label :first_name, "Prénom", class: "required" %>
+          <%= form.text_field :first_name, class: "form-control", placeholder: "Prénom", required: true %>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+        <div class="form-group">
+          <%= form.label :last_name , "Nom", class: "required" %>
+          <%= form.text_field :last_name, class: "form-control", placeholder: "Nom", required: true %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= form.label :civility , "Sexe", class: "required" %>
+          <%= form.select :civility, GENDERS, {prompt: "Sélectionner"}, class: "form-control", placeholder: "Prénom" %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+ 
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :country, "Pays", class: "required" %>
+        <%= form.collection_select :country_id, @countries, :id, :name, {prompt: "Sélectionner le pays"}, class: "form-control",  required: true %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :city, "Ville", class: "required" %>
+        <%= form.collection_select :city_id, @countries, :id, :name, {prompt: "Sélectionner le pays"}, class: "form-control",  required: true %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :phone, "Téléphone", class: "required" %>
+        <%= form.text_field :phone, autofocus: true, class: "form-control", id: "phone", placeholder: "Téléphone", required: true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= form.label :address, "Adresse" %>
+    <%= form.text_field :address, class: "form-control", placeholder: "Adresse" %>
+  </div>
+
+  <!-- Fieldset informations -->
+  <fieldset>
+    <legend>Identifiants </legend>
+    
+    
+  
+ 
+  <%= form.fields_for :account do |account| %>
+    <div class="row">                
+      <div class="form-group col-md-12">
+          <%= account.label :email, class: "required" %><br />
+          <%= account.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "E-mail", required: true, readonly: true %>
+      </div>            
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <%= account.label :password,"Mot de passe" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= account.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Mot de passe" %>
+      </div>
+        
+      <div class="form-group col-md-6">
+        <%= account.label :password_confirmation,"Confirmation du mot de passe" %><br />
+        <%= account.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirmation du mot de passe" %>
+      </div>
+      
+    </div>
+
+  <% end %>
+  </fieldset>
+
+  
+
+  <div class="actions text-right">
+    <%= form.submit "Modifier", class: "btn btn-primary" %>
+  </div>
+<% end %>

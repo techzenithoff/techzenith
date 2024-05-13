@@ -1,0 +1,58 @@
+<div class="col-lg-6">
+  <!-- Due tasks -->
+  <div class="card shadow-base bd-0">
+    <div class="card-header pd-20 bg-transparent">
+      <h6 class="card-title tx-uppercase tx-12 mg-b-0">Transferts</h6>
+    </div><!-- card-header -->
+    <table class="table table-responsive mg-b-0 tx-12">
+      <thead>
+        <tr class="tx-10">
+          <th class="pd-y-5">Date</th>
+          <th class="pd-y-5">MTCN</th>
+          <th class="pd-y-5">Motif</th>
+          <th class="pd-y-5">Expéditeur</th>
+          <th class="pd-y-5">Bénéficiaire</th>
+          <th class="pd-y-5">Montant TTC</th>
+          <th class="pd-y-5">Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render "dashboard/partials/subpartials/transfers/index" %>          
+      </tbody>
+    </table>
+              
+    <div class="card-footer tx-12 pd-y-15 bg-transparent">
+     <!-- <a href=""><i class="fa fa-angle-down mg-r-5"></i>Voir tout</a> -->
+    </div><!-- card-footer -->
+  </div>
+</div>
+
+<!-- -->
+<div class="col-lg-6">
+  <!-- Recent imputations -->
+  <div class="card shadow-base bd-0">
+    <div class="card-header pd-20 bg-transparent">
+      <h6 class="card-title tx-uppercase tx-12 mg-b-0">Rétraits</h6>
+    </div><!-- card-header -->
+    <table class="table table-responsive mg-b-0 tx-12">
+      <thead>
+        <tr class="tx-10">
+
+          <th class="pd-y-5">Date</th>
+          <th class="pd-y-5">Réf. Transfert</th>
+          <th class="pd-y-5">Type pièce d'identité</th>
+          <th class="pd-y-5">N°Pièce d'identité</th>
+          <th class="pd-y-5">Montant TTC</th>
+          <th class="pd-y-5">Status</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <%= render "dashboard/partials/subpartials/withdrawals/index" %>  
+      </tbody>
+    </table>
+            
+    <div class="card-footer tx-12 pd-y-15 bg-transparent">
+    </div><!-- card-footer -->
+  </div>      
+</div>

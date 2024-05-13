@@ -1,0 +1,33 @@
+
+<div class="container">
+	<div class="mg-t-30 mg-b-30">
+		<div class="col-md-9">
+			<div class="card">
+			  <h5 class="card-header">Modifier mon profil</h5>
+			  <div class="card-body">
+				<%= render 'form', customer: @customer %>
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-9 mg-t-30">
+			<div class="card">
+			  <h5 class="card-header">Supprimer mon compte</h5>
+			  <div class="card-body">
+				<p>
+					La suppression de votre compte est une action irréversible. Cela ne peut pas être annulé en contactant le support. Réfléchissez-bien avant de continuer !
+				</p>
+				
+
+				<%= link_to "Supprimer", customer_delete_path(@customer), remote: true, title: "Supprimer", class: "btn btn-danger" %>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div id="customer-modal" class="c-modal modal fade" data-backdrop="static"></div>

@@ -1,0 +1,125 @@
+<% title "Inscription" %>
+<% description "Créer un compte gratuitement" %>
+<% keywords  "Mon compte, se connecter, connexion, s'inscrire, créer un compte"  %>
+<div class="signin-page">
+    <div class="signin--page__header">
+			<div class="signin-logo tx-center tx-28 tx-bold tx-inverse">
+				<%= render 'components/logo/logo' %>
+			</div>
+		<div class="tx-center mg-b-20">Inscrivez-vous gratuitement!</div>
+	</div>
+	
+	<div class="sigin-page__body">
+   
+
+   
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    
+      <!-- Profile nested form -->
+   <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="form-group customSelect">
+        <%= f.collection_select :role_id, @roles, :id, :name, {prompt: "Sélectionner le type de compte"}, class: "form-control",  required: true %>
+        </div>
+      </div>
+      <%= f.fields_for :profile do |p| %>
+
+        
+          <div class="col-md-6">
+            <div class="form-group ">
+              <!-- <input type="email" class="form-control" placeholder="Email"> -->
+              <%= p.text_field :first_name, autofocus: true, class: "form-control", placeholder: "Prénom", required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group ">
+              <!-- <input type="email" class="form-control" placeholder="Email"> -->
+              <%= p.text_field :last_name, autofocus: true, class: "form-control", placeholder: "Nom", required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group customSelect">
+              <!-- <input type="email" class="form-control" placeholder="Email"> -->
+              <%= p.collection_select :country_id, @countries, :id, :name, {prompt: "Sélectionner le pays"}, class: "form-control",  required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group customSelect">
+              
+              <%= p.collection_select :city_id, @cities, :id, :name, {prompt: "Sélectionner la ville"}, class: "form-control",    required: true %>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              
+              <%= p.text_field :phone, autofocus: true, class: "form-control", id: "phone", placeholder: "Téléphone", required: true %>
+            </div>
+          </div>
+
+
+        
+
+      <% end %>
+    </div>
+            
+        
+    <div class="row"> 
+      <div class="col-md-12">         
+
+        
+
+        <div class="form-group ">
+          
+          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email", required: true %>
+        </div>
+        <div class="form-group ">
+          
+          <%= f.password_field :password, autocomplete: "off", class: "form-control",  placeholder: "Mot de passe", required: true %>
+        </div>
+        <div class="form-group ">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control",  placeholder: "Confirmation du mot de passe", required: true %>
+         
+        </div>
+     
+       
+        <div class="form-group">
+          En continuant votre inscription, vous déclarez avoir lu et acceptez les <%= link_to "conditions d'utilisation", show_page_path("cgu") %> de la plateforme.
+        </div>
+      
+        <div class="form-group text-center">
+
+          <div class="recaptcha_error">
+            
+          </div>
+
+          <div>
+            
+          </div>
+        </div>
+       
+        <!-- /.col -->
+        <div class="form-group">
+          <!-- <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button> -->
+           <%= f.submit "S'inscrire", class: "btn btn-primary btn-block lift" %>
+        </div>
+        <!-- /.col -->
+      
+   <% end %>
+    </div>
+    </div>
+              
+	<div class="o-line">
+        <div class="mg-t-10 tx-center">
+			Déjà un compte? <%= link_to "Se connecter", new_account_session_path(), class: "tx-info" %>
+		</div>
+
+	</div>
+   
+
+</div>

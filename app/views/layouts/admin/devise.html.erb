@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags site: APPLICATION_NAME %>
+       <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_pack_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "admin", "data-turbo-track": "reload" %>
+
+  </head>
+
+  <body>
+    <div class="d-flex align-items-center justify-content-center bg-br-primaryY">
+      <div class="login-wrapper wd-300 wd-xs-350 wd-xs-450 pd-25 mb5 mt5 bg-white rounded shadow-base">
+
+      <%= render :partial => 'layouts/partials/flash_messages', :flash => flash %>
+      
+
+      <%= yield %>
+    </div>
+  </div>
+  </body>
+</html>

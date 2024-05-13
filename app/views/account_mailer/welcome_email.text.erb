@@ -1,0 +1,10 @@
+Cher(e) <%= @account.accountable.first_name %>,<br>
+<br>
+Félicitation, vous êtes enregistré avec succès.<br>
+Vos identifiants de connexion sont les suivants:<br>
+<br>
+
+Email: <%= mail_to @account.email, @account.email  %> <br>
+Mot de passe:  <%= @password %>
+
+<br>

@@ -1,0 +1,10 @@
+<div class="col-lg-12">
+  <div class="card shadow-base bd-0 mg-t-20">
+              <div class="card-header pd-20 bg-transparent">
+                <h6 class="card-title tx-uppercase tx-12 mg-b-0">Repartition des employés par sexe</h6>
+              </div>
+
+                    <%= pie_chart @total_employees_chart_pie, messages: {empty: "Pas de données"}, legend: "left", thousands: ".", decimal: ",", library: { plotOptions: { pie: { dataLabels: {enabled: true,
+                format: '<b>{point.y:,.0f}</b><br>{point.percentage:.1f}%'},showInLegend: true}}}, :id => "total_employee_chart_pie", adapter: "highcharts" %>
+                </div>
+                </div>

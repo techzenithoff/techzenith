@@ -1,0 +1,162 @@
+
+<section id="blog" class="blog">
+<div class="container">
+  <div class="row mt-5 mb-5">
+
+    <!-- RESULTATS DES COURSES -->
+    <div class="col-md-4">
+      <div class="pmu-race-results">
+        <div class="pmu-race-results-head">
+          RESULTATS DES COURSES
+        </div>
+        <div class="pmu-race-results-body">
+          <table class="table table-striped">
+            <thead class="pmu-race-thead">
+              <tr>
+                <th scope="col">DATE</th>
+                <th scope="col">RÉSULTATS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @all_pmu_race_results.each do |pmu_race_result| %>
+                <tr>
+                  <td>
+                     <%= pmu_race_result.race_date.strftime("%d/%m/%Y") %>
+                  </td>
+                  <td>
+                    <% if pmu_race_result.pmu_race_report.present? %>
+                      <%= link_to "#{pmu_race_result.result}" , show_pmu_race_report_path(pmu_race_result.pmu_race_report.uid) %>
+                    <% else %>
+                      <%= pmu_race_result.result %>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+              
+            </tbody>
+          </table>            
+        </div>
+      </div>
+    </div><!-- FIN RESULTATS DES COURSES -->
+    
+    <!-- PROGRAMMES DES COURSES -->
+    <div class="col-md-4">
+      <div class="pmu-race-results">
+        <div class="pmu-race-results-head">
+          PROGRAMMES DES COURSES
+        </div>
+        <div class="pmu-race-results-body">
+          <table class="table table-striped">
+            
+            <tbody>
+              <% @all_pmu_race_programs.each do |pmu_race_program| %>
+                <tr>
+                  
+                  <td>
+                    <% if pmu_race_program.pmu_race_program_detail.present? %>
+                      <%= link_to "Course du #{pmu_race_program.race_date.strftime("%d/%m/%Y")}", root_path  %>
+                    <% else %>
+                      <%= "Course du #{pmu_race_program.race_date.strftime("%d/%m/%Y")}"  %>
+                    <% end %>
+
+                  </td>
+                </tr>
+              <% end %>
+              
+            </tbody>
+          </table>            
+        </div>
+      </div>
+    </div><!-- FIN PROGRAMMES DES COURSES -->
+
+    <!-- RAPPORT DE LA DERNIÈRE COURSE -->
+    <div class="col-md-4">
+      <div class="pmu-race-results">
+        <div class="pmu-race-results-head">
+          RAPPORT DE LA DERNIÈRE COURSE
+        </div>
+        <div class="pmu-race-results-body">
+          <% if @last_pmu_race_report.present? %>
+            <table class="table table-striped">
+              <thead class="pmu-race-thead">
+                <th><%= @last_pmu_race_report.pmu_race_result.race_date.strftime("%d/%m/%Y") %></th>
+                <th><%= @last_pmu_race_report.pmu_race_result.result %></th>
+              </thead>
+              <tbody>
+                <% if @last_pmu_race_report.present? %>
+                  <tr>
+                    <td>
+                       Ordre
+                    </td>
+                    <td>
+                      <%= @last_pmu_race_report.ordre %>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                       Désordre
+                    </td>
+                    <td>
+                      <%= @last_pmu_race_report.desordre %>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                       Couplé Gagnant
+                    </td>
+                    <td>
+                      <%= @last_pmu_race_report.couple_gagnant %>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Couplé Place A
+                    </td>
+                    <td>
+                      <%= @last_pmu_race_report.couple_place_a %>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Couplé Place B
+                    </td>
+                    <td>
+                      <%= @last_pmu_race_report.couple_place_b %>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      TRT
+                    </td>
+                    <td>
+                      <%= @last_pmu_race_report.trt %>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      TRC
+                    </td>
+                    <td>
+                      <%= @last_pmu_race_report.trc %>
+                    </td>
+                  </tr>
+                
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>           
+        </div>
+      </div>
+    </div><!-- FIN RAPPORT DE LA DERNIÈRE COURSE -->
+
+
+  </div>
+</div>
+
+</section>

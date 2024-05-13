@@ -1,0 +1,53 @@
+<%= form_with(model: account, url: update_account_path) do |f| %>
+	<% if account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+        <% account.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+					<div class="row">
+						<div class="form-group col-md-12 ">
+                            <%= f.label "Login", class: "required" %>
+                            <%= f.text_field :login,  class: "form-control", placeholder: "Login" , required: true %>
+                                                    
+                        </div>
+						
+                        <div class="form-group col-md-12 customSelect">
+                            <%= f.label "Profil", class: "required" %>
+                            <%= f.collection_select(:role_id, @roles,  :id, :name , {prompt: "Sélectionner"}, class: "form-control", style: "width: 100%", required: true) %>
+                                                    
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <%= f.label :email, class: "required" %><br />
+                            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "E-mail", required: true %>
+                        </div>
+
+						
+                    </div>
+                    <div class="row">
+
+						<div class="form-group col-md-6">
+                            <%= f.label :password,"Mot de passe", class: "required" %>
+                            <% if @minimum_password_length %>
+                            <em>(<%= @minimum_password_length %> characters minimum)</em>
+                            <% end %><br />
+                            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Mot de passe", required: true %>
+                        </div>
+						
+                        <div class="form-group col-md-6">
+                            <%= f.label :password_confirmation,"Confirmation du mot de passe", class: "required" %><br />
+                            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirmation du mot de passe", required: true %>
+                        </div>
+					
+					</div>
+				
+		<div class="form-group text-right">
+    <%= f.submit "Modifier", class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

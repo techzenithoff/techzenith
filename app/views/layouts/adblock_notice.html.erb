@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Notice</title>	
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <%= csrf_meta_tags %>
+    
+    <%= stylesheet_pack_tag 'frontend', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'frontend', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "frontend", "data-turbo-track": "reload" %>
+
+
+
+	</head>
+
+  <body class="renouveautv">
+		
+		<main id="main_wrapper" class="main_wrapper home_page">
+				
+
+					<%= yield %>
+				  
+
+		</main>
+	 
+
+	
+  </body>
+</html>

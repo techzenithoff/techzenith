@@ -1,0 +1,88 @@
+<!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center">
+          <a href="mailto:contact@example.com">info@renouveautv.africa</a>
+        </i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+223 70 70 70 70</span></i>
+      </div>
+
+      <div class="cta d-none d-md-flex align-items-center">
+        <a href="#about" class="scrollto">S'abonner</a>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- Navbar band -->
+    <div class= "navbar-brand">
+      <div class="logo">
+        <%= link_to root_url, class: "navbar-brand" do %>
+        <%= image_pack_tag "media/images/logo/logo.png", class: "logo" %> 
+      <% end %>
+        <!-- <h1><a href="index.html">Flexor</a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+    </div>
+
+      <nav id="navbar" class="navbar">
+        
+        <ul class="mr-auto">
+          <li>
+            <%= link_to "Acceuil",  root_path, class: "nav-link scrollto #{current? "active", root_path}" %>
+
+          </li>
+          <li>
+            
+            <%= link_to "Actualités",  blog_path, class: "nav-link scrollto #{current? "active", blog_path}" %>
+          </li>
+          <!--<li><a class="nav-link scrollto" href="#services">Services</a></li> -->
+          
+           <li>
+            <%= link_to "Émissions",  list_emissions_path, class: "nav-link scrollto #{current? "active", list_emissions_path}" %>
+          </li>
+          
+         
+          <li>
+            <a class="nav-link scrollto" href="#pricing">Galerie</a>
+          </li> 
+          
+        
+          <li>
+            <%= link_to "Contactez-nous",  contact_us_path, class: "nav-link scrollto #{current? "active", contact_us_path}" %>
+          </li>
+
+          <li class="live_tv">
+            
+            <%= link_to raw('<i class="bi bi-tv"></i>  TV en direct'), live_tv_path, class: "btn btn-danger button-glow tx-spacing-1", remote: false %>
+          </li>
+          
+        </ul> 
+        
+        <span class="hide-on-desktop live_tv mr-2">
+          <%= link_to raw('<i class="bi bi-tv"></i>  TV en direct'), live_tv_path, class: "btn btn-danger button-glow tx-spacing-1", remote: false %>
+        </span>
+    
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <!-- TradingView Widget BEGIN -->
+
+<!-- TradingView Widget END -->
+<!-- render "layouts/partials/front/tradingview" -->
+
+
+<!-- Top ads --->
+<%= render "layouts/partials/front/top_ads" %>
+<%= render "shareds/widgets/directory" %>
+
+<!-- News ticker section -->
+<%= render "layouts/partials/front/news_ticker" %>

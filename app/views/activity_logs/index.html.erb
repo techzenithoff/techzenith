@@ -1,0 +1,48 @@
+<div class="br-pageheader mg-30">
+      <nav class="breadcrumb pd-0 mg-0 tx-12">
+        
+        <span class="breadcrumb-item active"><h5>Log des activités</h5></span>
+      </nav>
+    </div><!-- br-pageheader -->
+<div class="br-pagebody mg-b-30">
+  <div class="br-section-wrapper">
+    <div class="headers mg-b-20">
+        <div class="left-content">
+        </div>
+
+        <div class="text-right">
+
+        </div>
+
+    </div>
+
+
+<table id="datatable1" class="table display responsive nowrap">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Utilisateur</th>
+      <th>Adresse IP</th>
+      <th>Controller</th>
+      <th>Action</th>
+      <th>Note</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activity_logs.each do |activity_log| %>
+      <tr>
+        <td><%= activity_log.created_at %></td>
+        <td><%= activity_log.user.profile.full_name %></td>
+        <td><%= activity_log.ip_address %></td>
+        <td><%= activity_log.controller %></td>
+        <td><%= activity_log.action %></td>
+        <td><%= activity_log.note %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>

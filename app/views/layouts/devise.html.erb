@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags site: APPLICATION_NAME %>
+       <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_pack_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "admin", "data-turbo-track": "reload" %>
+
+  </head>
+
+  <body>
+  	<main class="d-flex w-100">
+    <div class="container d-flex flex-column">
+      <div class="row vh-100">
+        <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 mx-auto d-table h-100">
+          <div class="d-table-cell align-middle">
+
+			<%= render :partial => 'layouts/partials/flash_messages', :flash => flash %>
+      
+
+			<%= yield %>
+		</div>
+  </div>
+</div>
+	</div>
+</main>
+  </body>
+</html>

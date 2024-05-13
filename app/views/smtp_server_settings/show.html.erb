@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Delivery method:</strong>
+  <%= @smtp_server_setting.delivery_method %>
+</p>
+
+<p>
+  <strong>Authentication method:</strong>
+  <%= @smtp_server_setting.authentication_method %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @smtp_server_setting.host %>
+</p>
+
+<p>
+  <strong>Port:</strong>
+  <%= @smtp_server_setting.port %>
+</p>
+
+<p>
+  <strong>Authentication:</strong>
+  <%= @smtp_server_setting.authentication %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @smtp_server_setting.user_name %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @smtp_server_setting.password %>
+</p>
+
+<p>
+  <strong>Sending address:</strong>
+  <%= @smtp_server_setting.sending_address %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @smtp_server_setting.domain %>
+</p>
+
+<p>
+  <strong>Enable starttls auto:</strong>
+  <%= @smtp_server_setting.enable_starttls_auto %>
+</p>
+
+<p>
+  <strong>Ssl:</strong>
+  <%= @smtp_server_setting.ssl %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @smtp_server_setting.user %>
+</p>
+
+<%= link_to 'Edit', edit_smtp_server_setting_path(@smtp_server_setting) %> |
+<%= link_to 'Back', smtp_server_settings_path %>

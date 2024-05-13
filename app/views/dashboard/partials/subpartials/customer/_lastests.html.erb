@@ -1,0 +1,69 @@
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-property-tab" data-toggle="tab" href="#nav-property" role="tab" aria-controls="nav-property" aria-selected="true">Propriétés</a>
+        <a class="nav-item nav-link" id="nav-inquiry-tab" data-toggle="tab" href="#nav-inquiry" role="tab" aria-controls="nav-inquiry" aria-selected="false">Demandes</a>
+        <a class="nav-item nav-link" id="nav-ad-tab" data-toggle="tab" href="#nav-ad" role="tab" aria-controls="nav-ad" aria-selected="false">Annonces</a>
+    </div>
+</nav>
+<div class="tab-content  mg-t-30" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-property" role="tabpanel" aria-labelledby="nav-property-tab">
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Type propriété</th>
+                    <th>Libellé</th>
+                    <th>Type d'offre</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody class="properties">
+                <%= render "properties/index" %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-pane fade" id="nav-inquiry" role="tabpanel" aria-labelledby="nav-inquiry-tab">
+        <table  class="table table-striped">
+
+            <thead>
+                <tr>
+                
+                    <th>Nom complet</th>
+                    <th>Téléphone</th>
+                    <th>Email</th>
+                    <th>Propriété</th>
+            
+                </tr>
+            </thead>
+
+            <tbody class="inquiries">
+                <%= render "inquiry_forms/index" %>
+            </tbody>
+        </table>
+    </div>
+
+     <div class="tab-pane fade" id="nav-ad" role="tabpanel" aria-labelledby="nav-ad-tab">
+        <table  class="table table-striped">
+
+        <thead>
+            <tr>
+            
+            <th>ID</th>
+            <th>Date</th>
+            <th>Service</th>
+            <th>Bénéficiaire</th>
+            <th>Nbr. Tâches</th>
+            <th>Vu</th>
+            <th>Actions</th>
+        
+            </tr>
+        </thead>
+
+        <tbody class="imputations">
+        
+        </tbody>
+        </table>
+    </div>
+</div>

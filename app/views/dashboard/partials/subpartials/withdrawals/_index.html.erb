@@ -1,0 +1,11 @@
+<% @withdrawals.each do |withdrawal| %>
+    <tr>
+      <td><%= withdrawal.created_at.strftime("%d/%m/%Y") %></td>
+      <td><%= withdrawal.transfer.uid %></td>
+      <td><%= IdentityDocumentType.find(withdrawal.beneficiary_identity_document_type_id).name %></td>
+      <td><%= withdrawal.beneficiary_identity_document_code %></td>
+      <td><%= "#{number_to_currency withdrawal.amount_incl_tax, unit: "", seperator: ",", delimiter: " "}" "#{withdrawal.transfer.withdrawal_currency.iso_code }" %>
+      <td><%= withdrawal.status %></td>
+      
+    </tr>
+  <% end %>

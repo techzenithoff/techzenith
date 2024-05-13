@@ -1,0 +1,23 @@
+<%= form_with(model: city, local: false) do |form| %>
+  <div class="modal-body">
+    <ul class="errors">
+    </ul>
+
+  <div class="form-group">
+    <%= form.label :country_id, "Pays", class: "required" %>
+    <%= form.collection_select :country_id, @countries, :id, :name,{prompt: "Sélectionner"}, class: "form-control",  style: "width: 100%", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :name, "Nom", class: "required" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Nom", required: true %>
+  </div>
+
+  
+
+  </div><!-- modal body -->
+  <div class="modal-footer">
+    <%= link_to "Annuler", "#", class: "btn btn-secondary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1", data: {dismiss: "modal"} %>
+    <%= form.submit "Enregistrer",  class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1",  "data-loading-text"=>"Loading...", autocomplete: "off" %>
+  </div>
+<% end %>

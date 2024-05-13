@@ -1,0 +1,43 @@
+<%= link_to emission_path(emission) do %>
+  <article class="entry" data-aos="fade-up">
+    <div class="entry-img">
+      <%= emission_thumbnail(emission, "", "img-fluid")%>
+
+    </div>
+    <h1 class="entry-title">
+        <%= link_to emission.title, emission_path(emission) %>
+
+    </h1>
+    <!--
+    <div class="entry-meta">
+      <ul>
+        <li class="d-flex align-items-center">
+          <i class="far fa-user"></i>
+          <a href="#">< emission.account.login ></a>
+        </li>
+        <li class="d-flex align-items-center">
+          <i class="far fa-clock"></i>
+          <a href="#">
+            <time>< emission.created_at.strftime("%d/%m/%Y") ></time>
+          </a>
+        </li>
+        <li class="d-flex align-items-center">
+          <i class="fas fa-rss-square"></i>
+          <a href="#">< emission.emission_category.title ></a>
+        </li>
+      </ul>
+    </div> -->
+
+    <!--
+    <div class="entry-content">
+      <p>
+        <  emission.content.to_plain_text.truncate_words(40, omission: ' ...') >
+
+      </p>
+      <div class="read-more">
+        < link_to "Lire plus", emission_path(emission) >
+      </div>
+    </div>-->
+
+  </article><!-- End blog entry -->
+<% end %>

@@ -1,0 +1,11 @@
+$("ul.errors").html("");
+<% if @post_category.errors.any? %>
+  <% @post_category.errors.full_messages.each do |message| %>
+ 
+    $("ul.errors").append($('<div class="c-alert c-alert--danger" > ').html("<%= message.html_safe %> "));
+  <% end %>
+<% else %>
+  $(".post-categories").html("<%= escape_javascript(render 'index') %>");
+  $("#post-category-modal").modal("hide");
+ 
+<% end %>

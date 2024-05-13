@@ -1,0 +1,43 @@
+<article class="entry " data-aos="fade-up">
+             <%= link_to post_path(post) do %>
+              <div class="entry-img">
+                <%= post_thumbnail(post, "", "img-fluid")%>
+
+              </div>
+              <% end %>
+
+              <h1 class="entry-title">
+                  <%= link_to post.title, post_path(post) %>
+
+              </h1>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center">
+                    <i class="far fa-user"></i>
+                    <a href="#"><%= post.account.login %></a>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="far fa-clock"></i>
+                    <a href="#">
+                      <time><%= post.created_at.strftime("%d/%m/%Y") %></time>
+                    </a>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="fas fa-rss-square"></i>
+                    <a href="#"><%= post.post_category.name %></a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="entry-content mb-4">
+                <p>
+                  <%=  post.content.to_plain_text.truncate_words(40, omission: ' ...') %>
+
+                </p>
+                <div class="read-more">
+                  <%= link_to "Lire plus", post_path(post) %>
+                </div>
+              </div>
+
+</article><!-- End blog entry -->

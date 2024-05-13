@@ -1,0 +1,140 @@
+
+<div class="slider-sub ">
+  <div class="bg-img"> 
+    <%= event_cover(@event, "", "")%>
+  </div>
+  <div class="container"> 
+    <!--<div class="heading-nav gap-4 mt-32">
+      <a class="hover-underline caption1 text-white" href="index.html">Home</a>
+      <i class="ph ph-caret-double-right text-white"></i>
+      <a class="hover-underline caption1 text-white" href="service-one.html">Services</a>
+      <i class="ph ph-caret-double-right text-white"></i>
+      <div class="caption1 text-white">Financial Planning</div>
+    </div>
+  -->
+    <div class="text-nav"> 
+      <div class="heading3 text-white"><%= @event.title %></div>
+      <!-- <div class="sub-heading mt-8 text-white fw-400">We employ industry-leading tools and techniques to protect your investments and minimize potential losses.</div>-->
+    </div>
+  </div>
+</div>
+<div class="content-detail-block pt-100 pb-100">
+  <div class="container"> 
+    <div class="row row-gap-32">
+      <div class="col-md-8"> 
+        <div class="content-para pr-55">
+          <div class="body2 text-secondary mt-16">
+            <%= @event.content %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="more-infor border-line-1px bora-12 pt-32 pb-32 pl-24 pr-24">
+          <div class="heading6">Détails</div>
+            <!--
+            <div class="body3 text-secondary mt-8">
+              Whether you have a team of 2 or 200, our shared team inboxes 
+            </div>
+            -->
+          <div class="list-nav mt-16">
+            <div class="nav-item bora-8  p-12 d-flex ">
+              <i class="fas fa-folder-open"></i>
+              <div class="feature-info-content pl-3">
+                <label class="mb-0">Catégorie</label>
+                <span class="mb-0 font-weight-bold d-block text-dark">
+                  <%= @event.event_category.title %>
+                </span>
+              </div>
+            </div>
+
+            <div class="nav-item bora-8  p-12 d-flex">
+              <i class="fas fa-calendar-alt"></i>
+              <div class="feature-info-content pl-3">
+                <label class="mb-0">Date début</label>
+                <span class="mb-0 font-weight-bold d-block text-dark">
+                  <%= "#{@event.start_date.strftime("%d/%m/%Y")} au #{@event.end_date.strftime("%d/%m/%Y")}" %>
+                </span>
+              </div>
+            </div>
+
+            
+
+            <div class="nav-item bora-8  p-12 d-flex">
+              <i class="fas fa-map-marked-alt"></i>
+              <div class="feature-info-content pl-3">
+                <label class="mb-0">Adresse</label>
+                <span class="mb-0 font-weight-bold d-block text-dark">
+                  <%= "#{@event.address}, #{@event.city} - #{@event.country.name}" %>
+                </span>
+              </div>
+            </div>
+
+            
+            
+
+            <div class="nav-item bora-8  p-12 d-flex">
+              <i class="fas fa-phone"></i>
+              <div class="feature-info-content pl-3">
+                <label class="mb-0">Téléphone</label>
+                <span class="mb-0 font-weight-bold d-block text-dark">
+                  <%= @event.phone %>
+                </span>
+              </div>
+            </div>
+            <!--
+            <a class="nav-item bora-8 flex-between p-12 active" href="service-detail.html">
+              <div class="text-button text-secondary">
+                Financial Planning
+              </div>
+              <i class="ph-bold ph-caret-right hidden"></i>
+            </a>
+            <a class="nav-item bora-8 flex-between p-12 mt-12" href="service-investment-advice.html">
+              <div class="text-button text-secondary">
+                Payment Solution
+              </div>
+              <i class="ph-bold ph-caret-right hidden"></i>
+            </a>
+            <a class="nav-item bora-8 flex-between p-12 mt-12" href="service-cryptocurrency-trading.html">
+              <div class="text-button text-secondary">
+                Cryptocurrency Financial
+              </div>
+              <i class="ph-bold ph-caret-right hidden"></i>
+            </a>
+            <a class="nav-item bora-8 flex-between p-12 mt-12" href="service-research-analysis.html">
+              <div class="text-button text-secondary">
+                Blockchain
+              </div>
+              <i class="ph-bold ph-caret-right hidden"></i>
+            </a>
+            <a class="nav-item bora-8 flex-between p-12 mt-12" href="service-education-resources.html">
+              <div class="text-button text-secondary">
+                Online Banking
+              </div>
+              <i class="ph-bold ph-caret-right hidden"></i>
+            </a>
+            <a class="nav-item bora-8 flex-between p-12 mt-12" href="service-portfolio-management.html">
+              <div class="text-button text-secondary">
+                Personal Financial
+              </div>
+              <i class="ph-bold ph-caret-right hidden"></i>
+            </a>
+          -->
+            </div>
+        </div>
+        <!--
+        <div class="ads-block bora-8">
+          <div class="bg-img"> <img src="assets/images/component/ads.png" alt=""/></div>
+          <div class="text flex-columns-between">
+            <div class="title">
+              <div class="heading5 text-white">Let’s talk</div>
+              <div class="body3 text-white mt-4">If you have project,<br>contact us!</div>
+            </div>
+            <div class="button-block"> <a class="button-share hover-button-black display-inline-block bg-white text-button pl-36 pr-36 pt-12 pb-12 bora-48" href="contact-style-one.html">Learn now</a>
+            </div>
+          </div>
+        </div>-->
+      </div>
+    </div>
+  </div>
+  
+    

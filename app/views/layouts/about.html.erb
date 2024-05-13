@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+     <% if controller_name == "front" && action_name == "home" %>
+      <%= display_meta_tags site: "#{APPLICATION_NAME} | #{APPLICATION_SLOGAN}", charset: "utf-8" %>
+      <% else %>
+         <%= display_meta_tags site: "#{APPLICATION_NAME}", charset: "utf-8" %>
+    <% end %>
+
+    <meta name="description" content="<%= meta_description %>">
+    <meta name="keywords" content="<%= meta_keywords %>">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="canonical" href="<%= request.original_url %>">
+
+    <meta name="publisher" content="<%= root_url %>">
+    <meta name="IDENTIFIER-URL" content="<%= root_url %>">
+    <meta http-equiv="Content-language" content="fr-FR">
+
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>">
+    <meta property="og:type" content="<%= meta_type %>">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:image" content="<%= meta_image %>">
+    <meta property="og:description" content="<%= meta_description %>">
+    <meta property="article:published_time" content="<%= meta_published_time %>">
+    <meta property="article:modified_time" content="<%= meta_modified_time %>" />
+    <meta property="og:site_name" content="<%= meta_site_name %>">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META['twitter_account'] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META['twitter_account'] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    
+    <%= stylesheet_pack_tag 'frontend', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'frontend', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "frontend", "data-turbo-track": "reload" %>
+
+
+
+  </head>
+
+  <body>
+    <%= render('layouts/partials/front/header') %>
+    <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="container" data-aos="fade-in">
+      <h1>Bienvenu sur Renouveau TV</h1>
+      <h2>Plongez dans l'univers captivant de notre chaîne de télévision, où l'émotion prend vie à l'écran.</h2>
+      <div class="d-flex align-items-center">
+        <i class="bx bxs-right-arrow-alt get-started-icon"></i>
+        <a href="#about" class="btn-get-started scrollto">S'abonner</a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+    <main id="main">
+      <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-4 col-lg-5" data-aos="fade-up">
+            <div class="content">
+              <h3>Pourquoi choisir Renouveau TV?</h3>
+              <p>
+                Pourquoi opter pour notre chaîne de télévision ? Parce que nous sommes bien plus qu'un simple média. Nous sommes votre fenêtre sur le monde, votre source d'actualités fraîches, d'informations pertinentes et de divertissements captivants, le tout réuni en un seul endroit...
+              </p>
+              <div class="text-center">
+                <a href="#" class="more-btn">Découvrir plus <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-8 col-lg-7 d-flex">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Informer</h4>
+                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Éduquer</h4>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>Divertir</h4>
+                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+      
+      <%= yield %>
+    </main>
+    <%= render('layouts/partials/front/footer') %>
+  </div>
+  </body>
+</html>

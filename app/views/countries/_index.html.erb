@@ -1,0 +1,17 @@
+<% @countries.each do |country| %>
+  <tr>
+    
+    <td><%= country.name %></td>
+    
+    <td>
+        <div class="action-buttons">
+            <%= link_to raw('<i class="fa fa-pencil" aria-hidden="true"></i>
+'),  edit_country_path(country), title: "Modifier", remote: true %>
+
+
+<%= link_to raw('<i class="far fa-trash-alt"></i>
+'), country_delete_path(country), remote: true, title: "Supprimer", class: "delete" %>
+</div>
+</td>
+  </tr>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @reservation.uid %>
+</p>
+
+<p>
+  <strong>Ticket:</strong>
+  <%= @reservation.ticket_id %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @reservation.quantity %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @reservation.status %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @reservation.account_id %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>

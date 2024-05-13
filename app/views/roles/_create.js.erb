@@ -1,0 +1,11 @@
+$("ul.errors").html("");
+<% if @role.errors.any? %>
+  <% @role.errors.full_messages.each do |message| %>
+ 
+    $("ul.errors").append($('<div class="c-alert c-alert--danger" > ').html("<%= message.html_safe %> "));
+  <% end %>
+<% else %>
+  $(".roles").html("<%= escape_javascript(render 'index') %>");
+  $("#role-modal").modal("hide");
+ 
+<% end %>

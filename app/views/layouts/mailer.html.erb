@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css">
+            .email-wrapper{
+                margin:0 auto;
+                width:100%;
+                max-width:800px; 
+
+            }
+            .logo img{
+                width: 130px;
+                vertical-align:top
+            }
+            .email-footer{
+                padding:25px 0;
+                text-align:center;
+            }
+            .email-header{
+                background:#fac016;
+                padding:30px 40px 0 40px;
+            }
+            .email-header table{
+                background-color:#fff;
+                text-align:center;
+                padding:15px;
+                width:100%;
+            }
+            .email-body{
+                padding:0px 40px;
+                background-color:#f5f5f5;
+
+            }
+            .email-content{
+                padding:25px;
+                border:1px solid #e1e1e1;
+                background-color:#fff;
+                line-height:25px;
+                font-family:Arial,Helvetica,sans-serif;
+                font-size:16px;
+                color:#4d4d4d;
+                text-align:justify;
+            }
+            table{
+                width:100%;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        
+            
+        <table class="email-wrapper" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+                <tr>
+                    <td  class="email-header">
+                        <table  cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td class="logo">
+                                        <%= image_pack_tag 'media/logo/logo.png' %>
+                                        <!-- image_tag "logo/logo.png", alt: "Logo iKataxi" --> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="email-body">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td class="email-content">
+                                        <span>
+                                            <%= yield %>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  class="email-footer">
+                                        &copy;<%= "#{Time.now.year} #{APPLICATION_NAME}" %>
+                 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+           
+    </body>
+</html>

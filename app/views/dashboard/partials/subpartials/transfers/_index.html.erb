@@ -1,0 +1,16 @@
+<% @transfers.each do |transfer| %>
+      <tr>
+        <td><%= transfer.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= transfer.mtcn %></td>
+        <td><%= transfer.transfer_reason.name %></td>
+       
+        <td><%= "#{transfer.sender_last_name} #{transfer.sender_first_name}"  %></td>
+      
+        
+        <td><%= "#{transfer.beneficiary_last_name} #{transfer.beneficiary_first_name}" %></td>
+       
+        <td><%= "#{number_to_currency transfer.amount_incl_tax, unit: "", seperator: ",", delimiter: " "}" "#{transfer.transfer_currency.iso_code }" %></td>
+        <td><span class="transfer_status_<%= transfer.status.parameterize %>"><%= transfer.status %></span></td>
+       
+      </tr>
+    <% end %>
