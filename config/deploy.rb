@@ -5,7 +5,7 @@ set :stages, %w(production staging)
 set :default_stage, "production"
 
 set :application, "techzenith"
-set :repo_url, "https://github.com/thkernel/moviepress.git"
+set :repo_url, "https://github.com/techzenithoff/techzenith.git"
 set :ssh_options, { auth_methods: %w(password), password: "AMOSXZIBITDE88" }
 
 set :git_http_username, 'thkernel'
