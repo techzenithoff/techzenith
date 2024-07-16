@@ -12,10 +12,10 @@ set :rails_env, "production"
 
 #server "51.38.235.131", user: "root", roles: %w{app db web}, ssh_options: {forward_agent: true}
 #server "techzenith.africa", user: "root", roles: %w{app db web}, ssh_options: {forward_agent: true}
-server "213.199.44.248", user: "root", roles: %w{app db web}, ssh_options: {forward_agent: true}
+server "techzenith.io", user: "root", roles: %w{app db web}, ssh_options: {forward_agent: true}
 
 set :branch, "master"
-set :port, 3100
+set :port, 3188
 
 
 
