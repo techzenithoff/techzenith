@@ -1,5 +1,11 @@
-.header-logo img {
-  max-height: 101px !important;
+.brand-logo, .default-logo, .responsive-logo {
+  max-width: 100% !important;
+
+}
+
+img.header-logo  {
+  /*max-height: 101px !important;*/
+  width: 260px !important;
  
 }
 
