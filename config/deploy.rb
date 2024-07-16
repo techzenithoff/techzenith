@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.18.0"
+lock "~> 3.19.1"
 
 set :stages, %w(production staging)
 set :default_stage, "production"
@@ -8,7 +8,7 @@ set :application, "techzenith"
 set :repo_url, "https://github.com/techzenithoff/techzenith.git"
 set :ssh_options, { auth_methods: %w(password), password: "AMOSXZIBITDE88" }
 
-set :git_http_username, 'thkernel'
+set :git_http_username, 'techzenithoff'
 ask(:github_token, "github_token", echo: false)
 set :git_http_password, fetch((:github_token))
 
