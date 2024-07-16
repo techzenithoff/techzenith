@@ -1,6 +1,6 @@
-APPLICATION_NAME = "TechZenith"
-APPLICATION_SLOGAN = ""
-APPLICATION_DESCRIPTION = ""
+APPLICATION_NAME = "Tech Zenith Technologies"
+APPLICATION_SLOGAN = "Le partenaire de votre reussite!"
+APPLICATION_DESCRIPTION = "Partenaire de votre reussite!"
 APPLICATION_KEYWORDS = [""]
 
 #COMPETITIONS = ["PL", "PD", "FL1", "CL"]

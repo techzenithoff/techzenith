@@ -22,26 +22,25 @@
             <div class="tekup-social-icon m_bottom">
               <ul>
                 <li>
-                  <a href="https://www.facebook.com/">
-                    <i class="ri-facebook-fill"></i>
-                  </a>
+                  
+                   <%= link_to raw('<i class="ri-facebook-fill"></i>'), FACEBOOK_URL, target: "_blank" %>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/">
-                    <i class="ri-linkedin-fill"></i>
-                  </a>
+                 
+                  <%= link_to raw('<i class="ri-linkedin-fill"></i>'), LINKEDIN_URL, target: "_blank"  %>
                 </li>
                 <li>
-                  <a href="https://twitter.com/">
-                    <i class="ri-twitter-fill"></i>
-                  </a>
+                 
+                  <%= link_to raw('<i class="ri-twitter-fill"></i>'), TWITTER_URL , target: "_blank" %>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/">
-                    <i class="ri-instagram-fill"></i>
-                  </a>
+                 
+                  <%= link_to raw('<i class="ri-instagram-fill"></i>'), INSTAGRAM_URL, target: "_blank"  %>
                 </li>
               </ul>
+
+             
+
             </div>
           </div>
           <div class="col-xl-2 col-lg-2 col-md-4">
@@ -50,11 +49,23 @@
                 <h5>Liens rapides</h5>
               </div>
               <ul>
-                <li><a href="#">A propos</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Produits</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contactez-nous</a></li>
+                <li>
+                 
+                  <%= link_to "Présentation", about_path %> 
+                </li>
+                <li>
+                  <a href="#">Services</a>
+                </li>
+                <li>
+                  <a href="#">Solutions</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
+                <li>
+                  
+                  <%= link_to "Contactez-nous", contact_path %> 
+                </li>
               </ul>
             </div>
           </div>
@@ -78,9 +89,15 @@
                 <h5>Information</h5>
               </div>
               <ul>
-                <li><a href="">Travaillez avec nous</a></li>
-                <li><a href="">Politique de confidentialité</a></li>
-                <li><a href="">Termes et conditions</a></li>
+                <li>
+                  <a href="">Travaillez avec nous</a>
+                </li>
+                <li>
+                  <a href="">Politique de confidentialité</a>
+                </li>
+                <li>
+                  <a href="">Termes et conditions</a>
+                </li>
                 <li><a href="#">FAQ</a></li>
               </ul>
             </div>

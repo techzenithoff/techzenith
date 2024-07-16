@@ -8,7 +8,7 @@
           <!-- Brand Logo-->
           <div class="brand-logo">
             <%= link_to root_url, class: "logo" do %>
-              <%= image_pack_tag "logo/logo-techzenith.png" %> 
+              <%= image_pack_tag "logo/logo-techzenith.png", class: "header-logo" %> 
             <% end %>
           </div>
           <div class="menu-block-wrapper">
@@ -79,13 +79,19 @@
                   </ul>
                 </li> -->
                 <li class="nav-item">
-                  <a href="about-us.html" class="nav-link-item">A propos</a>
+                  
+                   <%= link_to "Accueil", root_url, class:"nav-link-item #{current? "active", root_url}" %>   
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link-item">Nos services</a>
+                  
+                  <%= link_to "Présentation", about_url, class:"nav-link-item #{current? "active", about_url}" %>   
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link-item">Nos produits</a>
+                  
+                  <%= link_to "Services", services_url, class:"nav-link-item #{current? "active", services_url}" %>   
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link-item">Solutions</a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link-item">L'équipe</a>
@@ -94,7 +100,8 @@
                   <a href="#" class="nav-link-item">Blog</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link-item">Contactez-nous</a>
+                 
+                  <%= link_to "Contactez-nous", contact_path, class:"nav-link-item #{current? "active", contact_path}" %>   
                 </li>
                 
                 <!-- 
@@ -266,7 +273,10 @@
                 <i class="ri-search-line"></i>
               </div>
             -->
-              <a class="tekup-default-btn tekup-header-btn" href="contact-us.html">Demandez un devis <i class="ri-arrow-right-up-line"></i></a>
+              
+
+               <%= link_to raw("Demandez un devis <i class='ri-arrow-right-up-line'></i>"), contact_path, class:"tekup-default-btn tekup-header-btn" %>  
+
             </div>
           </div>
           <!-- mobile menu trigger -->

@@ -30,6 +30,13 @@ Rails.application.routes.draw do
 
   get "customer/my/profile/:uid" => "customers#edit", as: :edit_customer_profile
   get "driver/my/profile/:uid" => "taximen#edit", as: :edit_taximan_profile
+
+  get "nos-services" => "static_pages#services", as: :services
+  get "a-propos" => "static_pages#about", as: :about
+  get "contact" => "static_pages#contact", as: :contact
+
+  get "cgu" => "static_pages#cgu", as: :cgu
+  get "politique-confidentialite" => "static_pages#privacy_policy", as: :privacy_policy
  
 
  
