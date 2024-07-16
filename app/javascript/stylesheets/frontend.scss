@@ -1,4 +1,5 @@
-@import "application";
+//@import "bootstrap";
+
 
 
 //@import "../vendor/bracket/lib/datatables.net-dt/css/jquery.dataTables.min";
@@ -11,34 +12,38 @@
 //@import "../vendor/bracket/scss/perfect-scrollbar.min";
 //@import "../vendor/bracket/lib/select2/css/select2.min";
 //@import "../vendor/bracket/lib/select2/css/select2-bootstrap.min";
-@import "../vendor/backend/bracket/lib/cookieconsent/dist/cookieconsent";
+//@import "../vendor/backend/bracket/lib/cookieconsent/dist/cookieconsent";
 
 @import "actiontext";
 @import "./actiontext.scss";
 
 
 //@import "style";
-@import "main";
+//@import "main";
 //@import "scss/perfect-scrollbar.min";
 //@import "lib/datatables.net-dt/css/jquery.dataTables.min";
 //@import "lib/datatables.net-responsive-dt/css/responsive.dataTables.min";
-@import "error";
+//@import "error";
 //@import "custom";
-@import "select2-bootstrap4";
+//@import "select2-bootstrap4";
 
-// FRONT
 
-@import "../vendor/frontend/arsha/assets/vendor/aos/aos.css";
-//@import "../vendor/frontend/assets/vendor/boxicons/css/boxicons";
-//@import "../vendor/frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css";
-@import "../vendor/frontend/arsha/assets/vendor/glightbox/css/glightbox.min";
-@import "../vendor/frontend/arsha/assets/vendor/swiper/swiper-bundle.min";
 
-// Main CSS File 
-//@import "../vendor/frontend/arsha/assets/css/slick.min.css";
-//@import "../vendor/frontend/arsha/assets/icons/style.css";
-//@import "../vendor/frontend/arsha/assets/css/style.css";
-@import "../vendor/frontend/arsha/assets/css/main";
+/* FOR TEKUP TEMPLATE */
+@import url("https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap");
+
+@import "../vendor/frontend/tekup/assets/css/bootstrap.min.css";
+@import "../vendor/frontend/tekup/assets/css/magnific-popup.css";
+@import "../vendor/frontend/tekup/assets/css/slick.css";
+@import "../vendor/frontend/tekup/assets/css/animate.css";
+@import "../vendor/frontend/tekup/assets/css/fontawesome.css";
+@import "../vendor/frontend/tekup/assets/css/aos.css";
+@import "../vendor/frontend/tekup/assets/css/remixicon.css";
+
+@import "../vendor/frontend/tekup/assets/css/main.css";
+@import "../vendor/frontend/tekup/assets/css/app.css";
+
+/* END TEKUP TEMPLATE */
 
 
 

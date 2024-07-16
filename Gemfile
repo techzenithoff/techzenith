@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.0'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.3'
@@ -74,9 +74,10 @@ gem 'pg', '~> 1.1', '>= 1.1.4'
 gem 'pg_search', '~> 2.3'
 
 gem 'sassc', '~> 2.0', '>= 2.0.1'
-gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+#gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 #gem 'bootstrap', '~> 5.0', '>= 5.0.1'
 #gem 'bootstrap', '~> 5.3', '>= 5.3.1'
+#gem 'bootstrap', '~> 5.1.3', '>= 5.1.3'
 
 #gem 'bootstrap-sass', '~> 3.3.7'
 #gem 'tailwindcss-rails', '~> 0.3.3'

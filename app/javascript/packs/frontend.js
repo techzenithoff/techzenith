@@ -1,9 +1,15 @@
 
-//import Rails from "@rails/ujs"
+
 require("./application");
 
+
+
+import 'bootstrap/dist/js/bootstrap';
+
 import "../stylesheets/frontend.scss";
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
 
 
 /* FRONT ASSETS */
@@ -11,29 +17,36 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import "../vendor/backend/bracket/lib/cookieconsent/dist/cookieconsent";
 
 
-//import AOS from "../vendor/frontend/arsha/assets/vendor/aos/aos.js";
-//window.AOS = AOS;
-//import AOS from 'aos';
-//require("../vendor/front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-import "../vendor/frontend/arsha/assets/vendor/glightbox/js/glightbox";
-require("../vendor/frontend/arsha/assets/vendor/isotope-layout/isotope.pkgd.min.js");
-import Swiper from  "../vendor/frontend/arsha/assets/vendor/swiper/swiper-bundle.min.js";
-window.Swiper = Swiper;
 
-//require("../vendor/frontend/arsha/assets/js/slick.min.js");
-//require("../vendor/frontend/arsha/assets/js/waypoints.min.js");
-//require("../vendor/frontend/arsha/assets/js/countUp.min.js");
-//require("../vendor/frontend/arsha/assets/js/phosphor-icon.js");
-//require("../vendor/frontend/arsha/assets/js/scrollreveal-4.0.0.min.js");
-require("../vendor/frontend/arsha/assets/js/main.js");
+/* FOR TEKUP TEMPLATE */
 
+
+  
+
+  import "../vendor/frontend/tekup/assets/js/jquery.magnific-popup.min.js";
+  import "../vendor/frontend/tekup/assets/js/slick.js";
+  import "../vendor/frontend/tekup/assets/js/countdown.js";
+  
+  import WOW from  "../vendor/frontend/tekup/assets/js/wow.min.js";
+  window.WOW = WOW;
+
+  import "../vendor/frontend/tekup/assets/js/skill-bar.js";
+  import "../vendor/frontend/tekup/assets/js/slick-animation.min.js";
+  import "../vendor/frontend/tekup/assets/js/faq.js";
+  import "../vendor/frontend/tekup/assets/js/isotope.pkgd.min.js";
+  import "../vendor/frontend/tekup/assets/js/tabs-slider.js";
+  import "../vendor/frontend/tekup/assets/js/product-increment.js";
+
+  /*<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>*/
+
+  import "../vendor/frontend/tekup/assets/js/app.js";
 
 require("./social-share-button");
 
 
 
 require("./cookieconsent_init");
-require("./adblock_notice");
+
 
 
 

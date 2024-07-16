@@ -45,24 +45,27 @@
 
 
     <!-- we can put a custom yield with parameter here -->
-    <%= yield(:head) %>
+    <!-- yield(:head) -->
   </head>
 
-  <body class="index-page">
+  <body class="light">
+    <!--<div class="tekup-preloader-wrap">
+    <div class="tekup-preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  -->
     <%= render('layouts/partials/front/header') %>
-    <main class="main">
+   
      
       <%= yield %>
   
   
-    </main>
+    
     <%= render('layouts/partials/front/footer') %>
-  </div>
-
-   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <!--<div id="preloader"></div>-->
+  
   </body>
 </html>

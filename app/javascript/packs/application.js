@@ -27,7 +27,7 @@ window.$ = $;
 
 
 //import "bootstrap";
-import 'bootstrap/dist/js/bootstrap'
+//import 'bootstrap/dist/js/bootstrap';
 import "@fortawesome/fontawesome-free/css/all";
 //import '@fortawesome/fontawesome-free';
 
