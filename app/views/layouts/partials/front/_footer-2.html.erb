@@ -1,0 +1,124 @@
+<!-- Footer  -->
+
+  <footer class="tekup-footer-section dark-bg">
+    <div class="container">
+      <div class="tekup-footer-top tekup-section-padding">
+        <div class="row">
+          <div class="col-xl-3 col-lg-12">
+            <div class="tekup-footer-textarea light-color">
+              <a href="index.html">
+                <!--<img src="assets/images/logo/logo-white.svg" alt="">-->
+              </a>
+              <p>Nous concevons, construisons, mettons à niveau et maintenons des logiciels et des solutions de haute qualité.</p>
+              <div class="tekup-social-icon-box style-two">
+                <ul>
+                  
+                  <li>
+                  
+                   <%= link_to raw('<i class="ri-facebook-fill"></i>'), FACEBOOK_URL, target: "_blank" %>
+                </li>
+                <li>
+                 
+                  <%= link_to raw('<i class="ri-linkedin-fill"></i>'), LINKEDIN_URL, target: "_blank"  %>
+                </li>
+                <li>
+                 
+                  <%= link_to raw('<i class="ri-twitter-fill"></i>'), TWITTER_URL , target: "_blank" %>
+                </li>
+                <li>
+                 
+                  <%= link_to raw('<i class="ri-instagram-fill"></i>'), INSTAGRAM_URL, target: "_blank"  %>
+                </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 offset-xl-1 col-md-3">
+            <div class="tekup-footer-menu light-color">
+              <div class="tekup-footer-title light-color">
+                <h5>Liens rapides</h5>
+              </div>
+              <ul>
+                <li>
+                 
+                  <%= link_to "Présentation", about_path %> 
+                </li>
+                <li>
+                  <%= link_to "Services", root_path %> 
+                </li>
+                <li>
+                  <%= link_to "Solutions", root_path %> 
+                </li>
+                <li>
+                  <%= link_to "Blog", root_path %> 
+                </li>
+                <li>
+                  
+                  <%= link_to "Contactez-nous", contact_path %> 
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-4">
+            <div class="tekup-footer-menu light-color extar-margin">
+              <div class="tekup-footer-title light-color">
+                <h5>Services</h5>
+              </div>
+              <ul>
+                <li>
+                  <%= link_to "Développement d'application", root_path %> 
+                </li>
+                <li>
+                  <%= link_to "Intégration système et API", root_path %> 
+                </li>
+                <li>
+                  <%= link_to "Marketing Digital & communication", root_path %> 
+                </li>
+                
+                <li>
+                <%= link_to "Sécurité informatique", root_path %> 
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-5">
+            <div class="tekup-footer-title light-color light-color">
+              <h5>Newsletter</h5>
+              <p>Abonnez-vous à notre newsletter pour recevoir nos dernières actualités et informations.</p>
+            </div>
+            <div class="tekup-subscription">
+              <form action="#">
+                <input type="email" placeholder="Entrez votre email">
+                <button id="tekup-subscription-btn" type="button">
+                  <i class="ri-send-plane-fill"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tekup-footer-bottom">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="tekup-copywright light-color right">
+              <p> &copy; <%= "#{Time.now.year} #{APPLICATION_NAME}" %>  - Tout droits réservés. v1.0.0</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tekup-footer-menu light-color style-two right mb-0">
+              <ul>
+                <li>
+                  
+                  <%= link_to "Politique de confidentialité", root_path %>
+                </li>
+                <li>
+                  <%= link_to "Termes & Conditions", root_path %>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
