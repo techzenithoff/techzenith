@@ -29,13 +29,16 @@ Rails.application.routes.draw do
   patch "/taximan/edit/:uid" => "taximen#update", as: :udapte_taximan
 
   get "customer/my/profile/:uid" => "customers#edit", as: :edit_customer_profile
-  get "driver/my/profile/:uid" => "taximen#edit", as: :edit_taximan_profile
+  
 
-  get "nos-services" => "static_pages#services", as: :services
-  get "a-propos" => "static_pages#about", as: :about
+  get "services" => "static_pages#services", as: :services
+  get "presentation" => "static_pages#about", as: :about
   get "contact" => "static_pages#contact", as: :contact
+  get "blog" => "static_pages#blog", as: :blog
+  get "equipe" => "static_pages#team", as: :team
+  get "solutions" => "static_pages#solutions", as: :solutions
 
-  get "cgu" => "static_pages#cgu", as: :cgu
+  get "termes-conditions" => "static_pages#cgu", as: :cgu
   get "politique-confidentialite" => "static_pages#privacy_policy", as: :privacy_policy
  
 
