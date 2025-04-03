@@ -41,6 +41,8 @@ import "../vendor/backend/bracket/lib/cookieconsent/dist/cookieconsent";
 
   import "../vendor/frontend/tekup/assets/js/app.js";
 
+  /* END TEKUP */
+
 require("./social-share-button");
 
 
